@@ -58,66 +58,74 @@ export default function LoginSide() {
 				square
 				backgroundColor="#ececed"
 			>
-				<Box
-					sx={{
-						my: 8,
-						mx: 4,
-						display: "flex",
-						flexDirection: "column",
-						alignItems: "center",
-					}}
-				>
-					<Typography
-						component="h1"
-						variant="h5"
-						display="flex"
-						flexDirection="column"
-						alignItems="right"
-						sx={{ mt: 8, fontWeight: "bold" }}
-					>
-						SIGN IN
-					</Typography>
-					<Typography component="h6">to continue and book your slot</Typography>
+				<div>
 					<Box
-						component="form"
-						noValidate
-						onSubmit={handleSubmit}
-						sx={{ mt: 1 }}
+						sx={{
+							my: 8,
+							mx: 4,
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "center",
+						}}
 					>
-						<TextField
-							margin="normal"
-							required
-							fullWidth
-							id="email"
-							label="Email Address"
-							name="email"
-							autoComplete="email"
-							autoFocus
-						/>
-						<TextField
-							margin="normal"
-							required
-							fullWidth
-							name="password"
-							label="Password"
-							type="password"
-							id="password"
-							autoComplete="current-password"
-						/>
-						<FormControlLabel
-							control={<Checkbox value="remember" color="primary" />}
-							label="Remember me"
-						/>
-						<Button
-							type="submit"
-							fullWidth
-							variant="outlined"
-							sx={{ mt: 3, mb: 2 }}
+						<Typography
+							component="h1"
+							variant="h5"
+							display="flex"
+							flexDirection="column"
+							alignItems="right"
+							sx={{ mt: 8, fontWeight: "bold" }}
 						>
-							Sign In
-						</Button>
+							SIGN IN
+						</Typography>
+						<Typography component="h6">
+							to continue and book your slot
+						</Typography>
+						<Box
+							component="form"
+							noValidate
+							onSubmit={handleSubmit}
+							sx={{ mt: 1 }}
+						>
+							<TextField
+								margin="normal"
+								required
+								sx={{ width: "350px" }}
+								id="email"
+								label="Email"
+								name="email"
+								autoComplete="email"
+								autoFocus
+							/>
+							<TextField
+								margin="normal"
+								required
+								sx={{
+									width: "350px",
+									display: "flex",
+									flexDirection: "column",
+								}}
+								name="password"
+								label="Password"
+								type="password"
+								id="password"
+								autoComplete="current-password"
+							/>
+							<FormControlLabel
+								control={<Checkbox value="remember" color="primary" />}
+								label="Remember me"
+							/>
+							<Button
+								type="submit"
+								fullWidth
+								variant="outlined"
+								sx={{ mt: 3, mb: 2 }}
+							>
+								Sign In
+							</Button>
+						</Box>
 					</Box>
-				</Box>
+				</div>
 			</Grid>
 
 			<Grid
@@ -139,28 +147,44 @@ export default function LoginSide() {
 					sx={{
 						mt: -145,
 						mb: 1,
-						mr: 58,
-						ml: 2,
+						mr: 50,
+						// ml: 1,
 						backgroundColor: "#ececed",
+						borderTopRightRadius: "50%",
+						borderBottomRightRadius:"50%",
+						borderTopLeftRadius:"2%",
+						borderBottomLeftRadius:"2%",
 						color: "black",
+						paddingRight:"25px",
+						paddingTop:"10px",
+						paddingBottom:"10px",
 						fontWeight: "bold",
 					}}
-					// onClick={this.LoginSide}
 				>
 					Login
 				</Button>
 				<Button
 					type="button"
 					variant="contained"
-					onClick={SignInSide}
 					sx={{
 						mt: -135,
 						mb: 2,
 						mr: 58,
-						ml: 2,
+						// ml: -2,
+						// borderRadius: "50%",
+						// border: "red",
+						padding:"10px",
 						width: "100px",
-						backgroundColor: "#ececed",
-						color: "black",
+						backgroundColor: "black",
+						borderTopRightRadius: "50%",
+						borderBottomRightRadius:"50%",
+						borderTopLeftRadius:"2%",
+						borderBottomLeftRadius:"2%",
+						paddingRight:"25px",
+						paddingTop:"10px",
+						paddingBottom:"10px",
+						// backgroundColor:"red",
+						color: "white",
 						fontWeight: "bold",
 					}}
 				>
