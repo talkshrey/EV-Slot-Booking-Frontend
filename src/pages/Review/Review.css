@@ -1,0 +1,91 @@
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5vh;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.logo {
+    text-align: left;
+    width: 30%;
+}
+
+.title {
+    text-decoration: none;
+}
+
+.headers {
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
+}
+
+.rating-form {
+    width: 650px;
+    height: 500px;
+    background-color: #1F2128;
+    margin-top: -15vh;
+    margin-left: -30vh;
+}
+
+.details {
+    margin-left: 5vh;
+    color: #ECECED;
+    text-align: left;
+    padding: 20px;
+    font-size: smaller;
+}
+
+.image {
+    width: max-content;
+    margin-left: 100vh;  
+}
+
+.stars {
+    display: flex;
+    flex-direction: row;
+    color: #ECECED;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.feedback {
+    color: #ECECED;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.input-field {
+    width: 200px;
+    height: 100px;
+}
+
+.submit {
+    width: 150px;
+    padding: 3px;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #69FFF1;
+    border-color: #69FFF1;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #1F2128;
+}
+
+.submit:hover {
+    scale: 105%;
+}
+
+.rating-footer {
+    display: flex;
+    flex-direction: row;
+    color: #ECECED;
+    justify-content: space-evenly;
+    font-size: 12px;
+    margin-top: 100px;
+}
