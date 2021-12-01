@@ -1,5 +1,5 @@
 // import React from "react";
-// import login from "../../assets/images/login.jpg";
+import login from "../../assets/images/login.jpg";
 // import "./Login.css";
 
 // function Images() {
@@ -52,7 +52,7 @@ export default function LoginSide() {
 				item
 				xs={12}
 				sm={8}
-				md={7}
+				md={8}
 				component={Paper}
 				elevation={6}
 				square
@@ -104,10 +104,10 @@ export default function LoginSide() {
 							id="password"
 							autoComplete="current-password"
 						/>
-						{/* <FormControlLabel
+						<FormControlLabel
 							control={<Checkbox value="remember" color="primary" />}
 							label="Remember me"
-						/> */}
+						/>
 						<Button
 							type="submit"
 							fullWidth
@@ -124,28 +124,28 @@ export default function LoginSide() {
 				item
 				xs={false}
 				sm={false}
-				md={5}
+				md={4}
 				sx={{
-					backgroundImage:
-						"login.jpg",
+					backgroundImage: login,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 				}}
 			>
+				<img src="login.jpg" style={{ width: "100%", height: "100vh" }} />
 				<Button
 					className="login_button"
 					type="button"
 					variant="contained"
 					sx={{
-						mt: 2,
-						mb: 2,
-						mr: 56,
-						ml: -1,
+						mt: -145,
+						mb: 1,
+						mr: 58,
+						ml: 2,
 						backgroundColor: "#ececed",
 						color: "black",
 						fontWeight: "bold",
 					}}
-					onClick={LoginSide}
+					// onClick={this.LoginSide}
 				>
 					Login
 				</Button>
@@ -154,10 +154,11 @@ export default function LoginSide() {
 					variant="contained"
 					onClick={SignInSide}
 					sx={{
-						mt: 1,
+						mt: -135,
 						mb: 2,
-						mr: 54,
-						ml: -1,
+						mr: 58,
+						ml: 2,
+						width: "100px",
 						backgroundColor: "#ececed",
 						color: "black",
 						fontWeight: "bold",
@@ -166,13 +167,18 @@ export default function LoginSide() {
 					Sign Up
 				</Button>
 				<Typography
-					component="h1"
-					variant="h5"
-					fontWeight="bolder"
-					fontSize="40px"
-					sx={{ mt: "10%" }}
+					component="h6"
+					variant="h2"
+					fontWeight="bold"
+					fontSize="35px"
+					color="white"
+					sx={{
+						mt: -55,
+						mr: 12,
+						ml: 15,
+					}}
 				>
-					Welcome
+					Welcome, Back
 				</Typography>
 			</Grid>
 		</Grid>

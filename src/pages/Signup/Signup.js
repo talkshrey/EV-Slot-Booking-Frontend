@@ -1,4 +1,5 @@
 import * as React from "react";
+import login from "../../assets/images/login.jpg";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -13,7 +14,6 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { color } from "@mui/system";
 
-
 export default function SignInSide() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -27,7 +27,7 @@ export default function SignInSide() {
 				item
 				xs={12}
 				sm={8}
-				md={7}
+				md={8}
 				component={Paper}
 				elevation={6}
 				square
@@ -48,8 +48,7 @@ export default function SignInSide() {
 						display="flex"
 						flexDirection="column"
 						alignItems="right"
-						sx={{ mt: 8, fontWeight:"bold" }}
-                        
+						sx={{ mt: 8, fontWeight: "bold" }}
 					>
 						SIGN UP
 					</Typography>
@@ -63,12 +62,22 @@ export default function SignInSide() {
 						<TextField
 							margin="normal"
 							required
-							id="email"
+							id="username"
 							label="Username"
-							name="email"
+							name="username"
 							autoComplete="email"
-							autoFocus
-                            sx={{ mt: 3, mb: 2, mr:5, }}
+							sx={{ mt: 3, mb: 2, mr: 5 }}
+						/>
+
+						<TextField
+							margin="normal"
+							required
+							name="email"
+							label="Email"
+							type="email"
+							id="email"
+							autoComplete="email"
+							sx={{ mt: 3, mb: 2, mr: 5 }}
 						/>
 						<TextField
 							margin="normal"
@@ -78,52 +87,37 @@ export default function SignInSide() {
 							type="password"
 							id="password"
 							autoComplete="current-password"
-                            sx={{ mt: 3, mb: 2, mr:5, }}
+							sx={{ mt: 3, mb: 2, mr: 5 }}
 						/>
-                        <TextField
+
+						<TextField
 							margin="normal"
 							required
-							name="password"
-							label="Email"
-							type="password"
-							id="password"
-							autoComplete="current-password"
-                            sx={{ mt: 3, mb: 2, mr:5, }}
-						/>
-                        <TextField
-							margin="normal"
-							required
-							name="password"
+							name="confirm_password"
 							label="Confirm Password"
 							type="password"
-							id="password"
-							autoComplete="current-password"
-                            sx={{ mt: 3, mb: 2, mr:5, }}
+							id="confirm_password"
+							sx={{ mt: 3, mb: 2, mr: 5 }}
 						/>
-                        <TextField
+						<TextField
 							margin="normal"
 							required
-							name="password"
+							name="phoneNumber"
 							label="Phone Number"
-							type="password"
-							id="password"
-							autoComplete="current-password"
-                            sx={{ mt: 3, mb: 2, mr:5, }}
+							type="number"
+							id="phone_number"
+							sx={{ mt: 3, mb: 2, mr: 5 }}
 						/>
-                        <TextField
+						<TextField
 							margin="normal"
 							required
-							name="password"
+							name="pincode"
 							label="Pincode"
-							type="password"
-							id="password"
-							autoComplete="current-password"
-                            sx={{ mt: 3, mb: 2, mr:5, }}
+							type="pincode"
+							id="pincode"
+							sx={{ mt: 3, mb: 2, mr: 5 }}
 						/>
-						{/* <FormControlLabel
-							control={<Checkbox value="remember" color="primary" />}
-							label="Remember me"
-						/> */}
+
 						<Button
 							type="submit"
 							fullWidth
@@ -139,28 +133,28 @@ export default function SignInSide() {
 			<Grid
 				item
 				xs={false}
-				sm={4}
-				md={5}
+				sm={false}
+				md={4}
 				sx={{
-					backgroundImage:
-						"url(https://th.bing.com/th/id/R.3d88a927f8529dcba03364b09d98adbe?rik=JYmQaMVSULpYQg&riu=http%3a%2f%2fthewowstyle.com%2fwp-content%2fuploads%2f2015%2f01%2fnature-images.jpg&ehk=BNPsuSOUR7ATZ3EpRwxx1xFl7LUbO3tYlu1wFLCBrCE%3d&risl=&pid=ImgRaw&r=0)",
+					backgroundImage: login,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 				}}
 			>
+				<img src="login.jpg" style={{ width: "100%", height: "100vh" }} />
 				<Button
 					className="login_button"
 					type="button"
 					variant="contained"
 					sx={{
-						mt: 2,
-						mb: 2,
-						mr: 56,
-                        ml: -1,
+						mt: -145,
+						mb: 1,
+						mr: 58,
+						ml: 2,
+						// width:"20px",
 						backgroundColor: "#ececed",
 						color: "black",
-                        fontWeight:"bold"
-                        
+						fontWeight: "bold",
 					}}
 				>
 					Login
@@ -168,26 +162,33 @@ export default function SignInSide() {
 				<Button
 					type="button"
 					variant="contained"
+					onClick={SignInSide}
 					sx={{
-						mt: 1,
+						mt: -135,
 						mb: 2,
-						mr: 54,
-                        ml: -1,
+						mr: 58,
+						ml: 2,
+						width: "100px",
 						backgroundColor: "#ececed",
 						color: "black",
-                        fontWeight:"bold"
+						fontWeight: "bold",
 					}}
 				>
 					Sign Up
 				</Button>
 				<Typography
-					component="h1"
-					variant="h5"
-					fontWeight="bolder"
-					fontSize="40px"
-					sx={{ mt: "10%" }}
+					component="h6"
+					variant="h2"
+					fontWeight="bold"
+					fontSize="35px"
+					color="white"
+					sx={{
+						mt: -55,
+						mr: 12,
+						ml: 15,
+					}}
 				>
-					Hey there!
+					Hey, there
 				</Typography>
 			</Grid>
 		</Grid>
