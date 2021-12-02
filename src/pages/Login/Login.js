@@ -1,29 +1,6 @@
-// import React from "react";
+import React from "react";
 import login from "../../assets/images/login.jpg";
-// import "./Login.css";
-
-// function Images() {
-// 	return (
-// 		<div className="container">
-// 			<div className="div">DIV</div>
-// 			<div>
-// 				<button className="login_text">Login</button>
-// 				<button className="signup_text">Sign Up</button>
-//                 <p className="welcome_text">Welcome</p>
-// 				<img
-// 					className="loginImg"
-// 					src={login}
-// 					alt="https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2016/03/fall-trees-road-1.jpg"
-// 				/>
-
-// 			</div>
-// 		</div>
-// 	);
-// }
-
-// export default Images;
-
-import * as React from "react";
+import "./Login.css";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -38,6 +15,8 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { color } from "@mui/system";
 import SignInSide from "../Signup/Signup";
+// import {useHistory} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 export default function LoginSide() {
 	const handleSubmit = (event) => {
@@ -45,6 +24,8 @@ export default function LoginSide() {
 		const data = new FormData(event.currentTarget);
 		// eslint-disable-next-line no-console
 	};
+
+	const navigate = useNavigate();
 
 	return (
 		<Grid container component="main" sx={{ height: "100vh" }}>
@@ -139,11 +120,17 @@ export default function LoginSide() {
 					backgroundPosition: "center",
 				}}
 			>
-				<img src="login.jpg" style={{ width: "100%", height: "100vh" }} />
+				<img
+					src="login.jpg"
+					style={{ width: "100%", height: "100vh" }}
+				/>
 				<Button
 					className="login_button"
 					type="button"
 					variant="contained"
+					onClick={() => {
+						navigate("/");
+					}}
 					sx={{
 						mt: -145,
 						mb: 1,
@@ -151,13 +138,13 @@ export default function LoginSide() {
 						// ml: 1,
 						backgroundColor: "#ececed",
 						borderTopRightRadius: "50%",
-						borderBottomRightRadius:"50%",
-						borderTopLeftRadius:"2%",
-						borderBottomLeftRadius:"2%",
+						borderBottomRightRadius: "50%",
+						borderTopLeftRadius: "2%",
+						borderBottomLeftRadius: "2%",
 						color: "black",
-						paddingRight:"25px",
-						paddingTop:"10px",
-						paddingBottom:"10px",
+						paddingRight: "25px",
+						paddingTop: "10px",
+						paddingBottom: "10px",
 						fontWeight: "bold",
 					}}
 				>
@@ -166,6 +153,9 @@ export default function LoginSide() {
 				<Button
 					type="button"
 					variant="contained"
+					onClick={() => {
+						navigate("/signup");
+					}}
 					sx={{
 						mt: -135,
 						mb: 2,
@@ -173,16 +163,16 @@ export default function LoginSide() {
 						// ml: -2,
 						// borderRadius: "50%",
 						// border: "red",
-						padding:"10px",
+						padding: "10px",
 						width: "100px",
 						backgroundColor: "black",
 						borderTopRightRadius: "50%",
-						borderBottomRightRadius:"50%",
-						borderTopLeftRadius:"2%",
-						borderBottomLeftRadius:"2%",
-						paddingRight:"25px",
-						paddingTop:"10px",
-						paddingBottom:"10px",
+						borderBottomRightRadius: "50%",
+						borderTopLeftRadius: "2%",
+						borderBottomLeftRadius: "2%",
+						paddingRight: "25px",
+						paddingTop: "10px",
+						paddingBottom: "10px",
 						// backgroundColor:"red",
 						color: "white",
 						fontWeight: "bold",
@@ -200,6 +190,7 @@ export default function LoginSide() {
 						mt: -55,
 						mr: 12,
 						ml: 15,
+						opacity: 1,
 					}}
 				>
 					Welcome, Back

@@ -13,6 +13,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { color } from "@mui/system";
+import { useNavigate } from "react-router-dom";
 
 export default function SignInSide() {
 	const handleSubmit = (event) => {
@@ -20,6 +21,8 @@ export default function SignInSide() {
 		const data = new FormData(event.currentTarget);
 		// eslint-disable-next-line no-console
 	};
+
+	let navigate = useNavigate();
 
 	return (
 		<Grid container component="main" sx={{ height: "100vh" }}>
@@ -77,7 +80,6 @@ export default function SignInSide() {
 							type="email"
 							id="email"
 							autoComplete="email"
-							
 							sx={{ mt: 3, mb: 2, mr: 5 }}
 						/>
 						<TextField
@@ -121,9 +123,14 @@ export default function SignInSide() {
 
 						<Button
 							type="submit"
-							
 							variant="outlined"
-							sx={{ width: "250px", mt: 4	, display:"flex", flexDirection:"column", ml:"30%" }}
+							sx={{
+								width: "250px",
+								mt: 4,
+								display: "flex",
+								flexDirection: "column",
+								ml: "30%",
+							}}
 						>
 							Sign Up
 						</Button>
@@ -147,6 +154,9 @@ export default function SignInSide() {
 					className="login_button"
 					type="button"
 					variant="contained"
+					onClick={() => {
+						navigate("/");
+					}}
 					sx={{
 						mt: -145,
 						mb: 1,
@@ -154,13 +164,13 @@ export default function SignInSide() {
 						// ml: 1,
 						backgroundColor: "black",
 						borderTopRightRadius: "50%",
-						borderBottomRightRadius:"50%",
-						borderTopLeftRadius:"2%",
-						borderBottomLeftRadius:"2%",
+						borderBottomRightRadius: "50%",
+						borderTopLeftRadius: "2%",
+						borderBottomLeftRadius: "2%",
 						color: "white",
-						paddingRight:"25px",
-						paddingTop:"10px",
-						paddingBottom:"10px",
+						paddingRight: "25px",
+						paddingTop: "10px",
+						paddingBottom: "10px",
 						fontWeight: "bold",
 					}}
 				>
@@ -169,6 +179,9 @@ export default function SignInSide() {
 				<Button
 					type="button"
 					variant="contained"
+					onClick={() => {
+						navigate("/signup");
+					}}
 					sx={{
 						mt: -135,
 						mb: 2,
@@ -176,16 +189,17 @@ export default function SignInSide() {
 						// ml: -2,
 						// borderRadius: "50%",
 						// border: "red",
-						padding:"10px",
+						padding: "10px",
 						width: "100px",
 						backgroundColor: "#ececed",
 						borderTopRightRadius: "50%",
-						borderBottomRightRadius:"50%",
-						borderTopLeftRadius:"2%",
-						borderBottomLeftRadius:"2%",
-						paddingRight:"25px",
-						paddingTop:"10px",
-						paddingBottom:"10px",
+						borderBottomRightRadius: "50%",
+						// borderRadius:"30%",
+						borderTopLeftRadius: "2%",
+						borderBottomLeftRadius: "2%",
+						paddingRight: "25px",
+						paddingTop: "10px",
+						paddingBottom: "10px",
 						// backgroundColor:"red",
 						color: "black",
 						fontWeight: "bold",
