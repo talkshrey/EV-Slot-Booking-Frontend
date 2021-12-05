@@ -13,14 +13,13 @@ function App() {
 				<Routes>
 					<Route exact path="/" element={<LoginSide />} />
 					<Route path="/signup" element={<SignInSide />} />
-
 					<Route path="/review" element={<Review />} />
 				</Routes>
 			</div>
 		</Router>
 	);
 
-	{
+	// {
 		/* <Router>
 <div>
   <Link to="/">Home</Link>
@@ -40,7 +39,7 @@ function App() {
   </Route>
 </Routes>
 </Router> */
-	}
+	// }
 
 	// </div>
 
