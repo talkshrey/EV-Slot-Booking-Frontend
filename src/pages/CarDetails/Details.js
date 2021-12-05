@@ -17,7 +17,6 @@ export default function Details() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        // eslint-disable-next-line no-console
     };
 
     return (
@@ -67,7 +66,6 @@ export default function Details() {
                             label="Model"
                             type="text"
                             id="Model"
-                            // autoComplete="current-password"
                             sx={{ mt: 3, mb: 2, mr: 5, }}
                         />
                         <TextField
@@ -77,7 +75,6 @@ export default function Details() {
                             label="Plug Type"
                             type="text"
                             id="plug-type"
-                            // autoComplete="current-password"
                             sx={{ mt: 3, mb: 2, mr: 5, }}
                         />
                         <TextField
@@ -87,7 +84,6 @@ export default function Details() {
                             label="Vehicle Registration Number"
                             type="number"
                             id="reg-no"
-                            // autoComplete="current-password"
                             sx={{ mt: 3, mb: 2, mr: 5, }}
                         />
                         <TextField
@@ -97,19 +93,15 @@ export default function Details() {
                             label="VIN"
                             type="text"
                             id="VIN"
-                            // autoComplete="current-password"
                             sx={{ mt: 3, mb: 2, mr: 5, }}
                         />
-                        {/* <FormControlLabel
-							control={<Checkbox value="remember" color="primary" />}
-							label="Remember me"
-						/> */}
+
                         <Button
                             type="submit"
                             fullWidth
                             variant="outlined"
                             sx={{
-
+                                display: 'block',
                                 mt: 4, mb: 4,
                                 maxWidth: '480px',
                             }}
@@ -134,39 +126,7 @@ export default function Details() {
                     backgroundPosition: "center",
                 }}
             >
-                <Button
-                    className="login_button"
-                    type="button"
-                    variant="contained"
-                    sx={{
-                        mt: 2,
-                        mb: 2,
-                        mr: 56,
-                        ml: -1,
-                        backgroundColor: "#ececed",
-                        color: "black",
-                        fontWeight: "bold",
-                    }}
-                // onClick={ }
-                >
-                    Login
-                </Button>
-                <Button
-                    type="button"
-                    variant="contained"
-                    // onClick={ }
-                    sx={{
-                        mt: 1,
-                        mb: 2,
-                        mr: 54,
-                        ml: -1,
-                        backgroundColor: "#ececed",
-                        color: "black",
-                        fontWeight: "bold",
-                    }}
-                >
-                    Sign Up
-                </Button>
+
                 <Typography
                     component="h1"
                     variant="h5"
