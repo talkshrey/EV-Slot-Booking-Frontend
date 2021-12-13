@@ -13,18 +13,12 @@ function App() {
 		<Router>
 			<div className="App">
 				<Routes>
-<<<<<<< HEAD
 					<Route exact path='/login' element={<LoginSide />} />
 					<Route path='/signup' element={<SignInSide />} />
 					<Route path='/review' element={<Review />} />
 					<Route exact path='/' element={<Landing />} />
 					<Route exact path='/details' element={<Details />} />
 
-=======
-					<Route exact path="/" element={<LoginSide />} />
-					<Route path="/signup" element={<SignInSide />} />
-					<Route path="/review" element={<Review />} />
->>>>>>> 87cd92da5bcab060591503469d3e259adaa4746a
 				</Routes>
 			</div>
 		</Router>
