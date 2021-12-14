@@ -25,7 +25,7 @@ export default function SignInSide() {
 	let navigate = useNavigate();
 
 	return (
-		<Grid container component="main" sx={{ height: "100vh" }}>
+		<Grid container component="main" sx={{ height: "100vh", overflow: "hidden" }}>
 			<Grid
 				item
 				xs={12}
@@ -36,9 +36,11 @@ export default function SignInSide() {
 				square
 				backgroundColor="#ececed"
 			>
+				<img src="https://drive.google.com/uc?export=download&id=1nugV0IRHoEz8iqO7Kx80NgmmRze0oCRM" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
+
 				<Box
 					sx={{
-						my: 8,
+						my: 3,
 						mx: 4,
 						display: "flex",
 						flexDirection: "column",
@@ -69,7 +71,7 @@ export default function SignInSide() {
 							label="Username"
 							name="username"
 							autoComplete="email"
-							sx={{ mt: 3, mb: 2, mr: 5 }}
+							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
 						/>
 
 						<TextField
@@ -80,7 +82,7 @@ export default function SignInSide() {
 							type="email"
 							id="email"
 							autoComplete="email"
-							sx={{ mt: 3, mb: 2, mr: 5 }}
+							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
 						/>
 						<TextField
 							margin="normal"
@@ -90,7 +92,7 @@ export default function SignInSide() {
 							type="password"
 							id="password"
 							autoComplete="current-password"
-							sx={{ mt: 3, mb: 2, mr: 5 }}
+							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
 						/>
 
 						<TextField
@@ -100,7 +102,7 @@ export default function SignInSide() {
 							label="Confirm Password"
 							type="password"
 							id="confirm_password"
-							sx={{ mt: 3, mb: 2, mr: 5 }}
+							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
 						/>
 						<TextField
 							margin="normal"
@@ -109,7 +111,7 @@ export default function SignInSide() {
 							label="Phone Number"
 							type="number"
 							id="phone_number"
-							sx={{ mt: 3, mb: 2, mr: 5 }}
+							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
 						/>
 						<TextField
 							margin="normal"
@@ -118,22 +120,25 @@ export default function SignInSide() {
 							label="Pincode"
 							type="pincode"
 							id="pincode"
-							sx={{ mt: 3, mb: 2, mr: 5 }}
+							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
 						/>
-
-						<Button
-							type="submit"
-							variant="outlined"
-							sx={{
-								width: "250px",
-								mt: 4,
-								display: "flex",
-								flexDirection: "column",
-								ml: "30%",
-							}}
-						>
-							Sign Up
-						</Button>
+						<Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+							<Button
+								type="submit"
+								variant="outlined"
+								sx={{
+									width: "300px",
+									height: "50px",
+									mt: 4,
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+									flexDirection: "column",
+								}}
+							>
+								Sign Up
+							</Button>
+						</Box>
 					</Box>
 				</Box>
 			</Grid>
@@ -147,9 +152,13 @@ export default function SignInSide() {
 					backgroundImage: login,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
+					backgroundColor: '#1F2128',
 				}}
 			>
-				<img src="login.jpg" style={{ width: "100%", height: "100vh" }} />
+				<img
+					src="https://drive.google.com/uc?export=download&id=1mUkyIFzvbAv64pRdRwrr3D10BR-tYUzA"
+					style={{ width: "100%", height: "100vh" }}
+				/>
 				<Button
 					className="login_button"
 					type="button"
@@ -159,18 +168,23 @@ export default function SignInSide() {
 					}}
 					sx={{
 						mt: -145,
-						mb: 1,
-						mr: 50,
-						// ml: 1,
+						mb: 2,
+						mr: 58,
+						// ml: -2,
+						// borderRadius: "50%",
+						// border: "red",
+						padding: "10px",
+						width: "100px",
 						backgroundColor: "black",
 						borderTopRightRadius: "50%",
 						borderBottomRightRadius: "50%",
 						borderTopLeftRadius: "2%",
 						borderBottomLeftRadius: "2%",
-						color: "white",
 						paddingRight: "25px",
 						paddingTop: "10px",
 						paddingBottom: "10px",
+						// backgroundColor:"red",
+						color: "white",
 						fontWeight: "bold",
 					}}
 				>
@@ -191,17 +205,16 @@ export default function SignInSide() {
 						// border: "red",
 						padding: "10px",
 						width: "100px",
-						backgroundColor: "#ececed",
+						backgroundColor: "black",
 						borderTopRightRadius: "50%",
 						borderBottomRightRadius: "50%",
-						// borderRadius:"30%",
 						borderTopLeftRadius: "2%",
 						borderBottomLeftRadius: "2%",
 						paddingRight: "25px",
 						paddingTop: "10px",
 						paddingBottom: "10px",
 						// backgroundColor:"red",
-						color: "black",
+						color: "white",
 						fontWeight: "bold",
 					}}
 				>
@@ -217,9 +230,10 @@ export default function SignInSide() {
 						mt: -55,
 						mr: 12,
 						ml: 15,
+						opacity: 1,
 					}}
 				>
-					Hey, there
+					Welcome, Back
 				</Typography>
 			</Grid>
 		</Grid>
