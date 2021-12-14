@@ -1,21 +1,14 @@
 import React from "react";
 import login from "../../assets/images/login.jpg";
 import "./Login.css";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { color } from "@mui/system";
-import SignInSide from "../Signup/Signup";
-// import {useHistory} from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 export default function LoginSide() {
@@ -123,6 +116,7 @@ export default function LoginSide() {
 				<img
 					src="login.jpg"
 					style={{ width: "100%", height: "100vh" }}
+					alt="login-img"
 				/>
 				<Button
 					className="login_button"

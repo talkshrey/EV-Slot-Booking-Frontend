@@ -1,20 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import landingScreenImg from './image 3.png'
 import './Landing.css'
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import DirectionsIcon from '@mui/icons-material/Directions';
 
 function Landing() {
+  const [input, setInput] = useState('');
+
   return (
     <div className='landingContainer'>
       <div className="landingImg">
         <div className="overlay">
-          <img src={landingScreenImg} className='landingScreenImg' />
+          <img src={landingScreenImg} className='landingScreenImg' alt="cover"/>
         </div>
       </div>
       <div className="SearchBar">
@@ -28,8 +27,17 @@ function Landing() {
               sx={{ ml: 1, flex: 1 }}
               placeholder="Locate nearby charging stations.."
               inputProps={{ 'aria-label': 'Locate nearby charging stations..' }}
+              onChange={(event)=>{
+                setInput(event.target.value)
+                console.log(input)
+              }}
             />
-            <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
+
+            <IconButton 
+              type="submit"
+              sx={{ p: '10px' }} 
+              aria-label="search" 
+            >
               <SearchIcon />
             </IconButton>
 
