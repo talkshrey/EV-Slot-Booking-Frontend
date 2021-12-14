@@ -4,10 +4,24 @@ import SignInSide from "./pages/Signup/Signup";
 
 import Review from "./pages/Review/Review";
 import { Route, Routes } from "react-router";
+import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
+
+	const theme = createTheme({
+		palette: {
+		  secondary: {
+			main: '#E33E7F'
+		  }
+		}
+	  });
+
 	return (
+
+		<MuiThemeProvider theme={theme}>
+      
+    
 		<Router>
 			<div className="App">
 				<Routes>
@@ -17,6 +31,7 @@ function App() {
 				</Routes>
 			</div>
 		</Router>
+		</MuiThemeProvider>
 	);
 
 	// {

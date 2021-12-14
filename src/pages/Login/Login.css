@@ -59,7 +59,6 @@
 	background-color: #ececed !important;
 }
 
-/* .login_button {
-	background-color: white !important;
-    border-radius: 20%;
-} */
+.login_button :hover {
+	background-color: red !important;
+}

@@ -112,7 +112,7 @@ export default function LoginSide() {
 			<Grid
 				item
 				xs={false}
-				sm={false}
+				sm={4}
 				md={4}
 				sx={{
 					backgroundImage: login,
