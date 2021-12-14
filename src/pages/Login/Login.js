@@ -21,7 +21,7 @@ export default function LoginSide() {
 	const navigate = useNavigate();
 
 	return (
-		<Grid container component="main" sx={{ height: "100vh" }}>
+		<Grid container component="main" sx={{ height: "100vh", overflow: "hidden" }}>
 			<Grid
 				item
 				xs={12}
@@ -31,8 +31,11 @@ export default function LoginSide() {
 				elevation={6}
 				square
 				backgroundColor="#ececed"
+
 			>
 				<div>
+					<img src="https://drive.google.com/uc?export=download&id=1nugV0IRHoEz8iqO7Kx80NgmmRze0oCRM" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
+
 					<Box
 						sx={{
 							my: 8,
@@ -111,10 +114,11 @@ export default function LoginSide() {
 					backgroundImage: login,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
+					backgroundColor: '#1F2128',
 				}}
 			>
 				<img
-					src="login.jpg"
+					src="https://drive.google.com/uc?export=download&id=1mUkyIFzvbAv64pRdRwrr3D10BR-tYUzA"
 					style={{ width: "100%", height: "100vh" }}
 					alt="login-img"
 				/>
@@ -127,18 +131,23 @@ export default function LoginSide() {
 					}}
 					sx={{
 						mt: -145,
-						mb: 1,
-						mr: 50,
-						// ml: 1,
-						backgroundColor: "#ececed",
+						mb: 2,
+						mr: 58,
+						// ml: -2,
+						// borderRadius: "50%",
+						// border: "red",
+						padding: "10px",
+						width: "100px",
+						backgroundColor: "black",
 						borderTopRightRadius: "50%",
 						borderBottomRightRadius: "50%",
 						borderTopLeftRadius: "2%",
 						borderBottomLeftRadius: "2%",
-						color: "black",
 						paddingRight: "25px",
 						paddingTop: "10px",
 						paddingBottom: "10px",
+						// backgroundColor:"red",
+						color: "white",
 						fontWeight: "bold",
 					}}
 				>
