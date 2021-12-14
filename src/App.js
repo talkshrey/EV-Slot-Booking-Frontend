@@ -6,6 +6,8 @@ import Review from "./pages/Review/Review";
 import { Route, Routes } from "react-router";
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router } from "react-router-dom";
+import Landing from "./pages/Landing/Landing";
+import Details from "./pages/CarDetails/Details";
 
 function App() {
 
@@ -25,9 +27,12 @@ function App() {
 		<Router>
 			<div className="App">
 				<Routes>
-					<Route exact path="/" element={<LoginSide />} />
-					<Route path="/signup" element={<SignInSide />} />
-					<Route path="/review" element={<Review />} />
+					<Route exact path='/login' element={<LoginSide />} />
+					<Route path='/signup' element={<SignInSide />} />
+					<Route path='/review' element={<Review />} />
+					<Route exact path='/' element={<Landing />} />
+					<Route exact path='/details' element={<Details />} />
+
 				</Routes>
 			</div>
 		</Router>
