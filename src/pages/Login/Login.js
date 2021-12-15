@@ -133,7 +133,7 @@ export default function LoginSide() {
 					type="button"
 					variant="contained"
 					onClick={() => {
-						navigate("/");
+						navigate("/login");
 					}}
 					sx={{
 						mt: -145,
