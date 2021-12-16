@@ -48,7 +48,7 @@ export default function Details() {
                         display="flex"
                         flexDirection="column"
                         alignItems="right"
-                        sx={{ mt: 8, fontWeight: "bold" }}
+                        sx={{ mt: 0, fontWeight: "bold" }}
                     >
                         REGISTER  YOUR DRIVE
                     </Typography>
@@ -57,7 +57,7 @@ export default function Details() {
                         component="form"
                         noValidate
                         onSubmit={handleSubmit}
-                        sx={{ mt: 1 }}
+                        sx={{ mt:1 }}
                     >
                         <TextField
                             margin="normal"
@@ -66,7 +66,7 @@ export default function Details() {
                             label="Model"
                             name="Model"
                             autoComplete="Model"
-                            sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+                            sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
                         />
 
                         <TextField
@@ -77,7 +77,7 @@ export default function Details() {
                             type="text"
                             id="plug_type"
                             autoComplete="plug type"
-                            sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+                            sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
                         />
                         <TextField
                             margin="normal"
@@ -87,7 +87,7 @@ export default function Details() {
                             type="text"
                             id="Vehicle registration no."
                             autoComplete="Vehicle registration no."
-                            sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+                            sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
                         />
 
                         <TextField
@@ -97,7 +97,7 @@ export default function Details() {
                             label="VIN"
                             type="number"
                             id="VIN"
-                            sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+                            sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
                         />
 
                         <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>

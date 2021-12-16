@@ -1,15 +1,22 @@
 import "./App.css";
+import React, {useState} from "react";
 import LoginSide from "./pages/Login/Login";
 import SignInSide from "./pages/Signup/Signup";
-
 import Review from "./pages/Review/Review";
-import { Route, Routes } from "react-router";
+import { Route, Routes , useNavigate} from "react-router";
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router } from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
 import Details from "./pages/CarDetails/Details";
 
+
 function App() {
+
+	const [token, setToken] = useState();
+
+//   if(!token) {
+//     return <LoginSide setToken={setToken} />
+//   }
 
 	const theme = createTheme({
 		palette: {
