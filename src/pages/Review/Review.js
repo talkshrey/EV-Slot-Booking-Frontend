@@ -1,13 +1,14 @@
 import './Review.css'
 import { Link } from 'react-router-dom'
 import { Rating } from '@mui/material'
+import logo from '../../assets/images/LPlogo.png'
 
 export default function Review() {
 
     return (
         <div>
             <div className="nav-bar">
-                <div className="logo"> Logo </div>
+                <div className="logo"> <img src={logo} alt="logo"/> </div>
                 <div className="headers">
                     <Link to="/book" className="title"> <div> Book </div> </Link>  
                     <Link to="/review" className="title"> <div> Reviews </div> </Link> 

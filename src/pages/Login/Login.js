@@ -10,11 +10,11 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
+import logo from '../../assets/images/LPlogo.png'
 
 export default function LoginSide() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		const data = new FormData(event.currentTarget);
 		// eslint-disable-next-line no-console
 	};
 
@@ -34,7 +34,7 @@ export default function LoginSide() {
 
 			>
 				<div>
-					<img src="https://drive.google.com/uc?export=download&id=1nugV0IRHoEz8iqO7Kx80NgmmRze0oCRM" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
+					<img src={logo} alt="logo" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
 
 					<Box
 						sx={{

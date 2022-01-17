@@ -1,5 +1,6 @@
 import * as React from "react";
 import login from "../../assets/images/login.jpg";
+import logo from "../../assets/images/LPlogo.png";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
@@ -11,14 +12,13 @@ import { useNavigate } from "react-router-dom";
 export default function SignInSide() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		const data = new FormData(event.currentTarget);
 		// eslint-disable-next-line no-console
 	};
 
 	let navigate = useNavigate();
 
 	return (
-		<Grid container component="main" sx={{ height: "100vh", overflow: "hidden" }}>
+		<Grid container component="main" sx={{ height: "100vh" }}>
 			<Grid
 				item
 				xs={12}
@@ -29,7 +29,7 @@ export default function SignInSide() {
 				square
 				backgroundColor="#ececed"
 			>
-				<img src="https://drive.google.com/uc?export=download&id=1nugV0IRHoEz8iqO7Kx80NgmmRze0oCRM" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
+				<img src={logo} alt="logo" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
 
 				<Box
 					sx={{
@@ -142,14 +142,14 @@ export default function SignInSide() {
 				sm={false}
 				md={4}
 				sx={{
-					backgroundImage: login,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 					backgroundColor: '#1F2128',
 				}}
 			>
 				<img
-					src="https://drive.google.com/uc?export=download&id=1mUkyIFzvbAv64pRdRwrr3D10BR-tYUzA"
+					src={login}
+					alt="cover-img"
 					style={{ width: "100%", height: "100vh" }}
 				/>
 				<Button
