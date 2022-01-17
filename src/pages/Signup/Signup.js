@@ -25,7 +25,13 @@ export default function SignInSide() {
 	let navigate = useNavigate();
 
 	return (
-		<Grid container component="main" sx={{ height: "100vh", overflow: "hidden" }}>
+		<Grid
+			container
+			component="main"
+			sx={{ height: "100vh",
+			 overflow: "hidden"
+			 }}
+		>
 			<Grid
 				item
 				xs={12}
@@ -36,7 +42,15 @@ export default function SignInSide() {
 				square
 				backgroundColor="#ececed"
 			>
-				<img src="https://drive.google.com/uc?export=download&id=1nugV0IRHoEz8iqO7Kx80NgmmRze0oCRM" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
+				<img
+					src="https://drive.google.com/uc?export=download&id=1nugV0IRHoEz8iqO7Kx80NgmmRze0oCRM"
+					style={{
+						marginTop: "25px",
+						display: "flex",
+						justifyContent: "flex-start",
+						marginLeft: "25px",
+					}}
+				/>
 
 				<Box
 					sx={{
@@ -71,7 +85,7 @@ export default function SignInSide() {
 							label="Username"
 							name="username"
 							autoComplete="email"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
 						/>
 
 						<TextField
@@ -82,7 +96,7 @@ export default function SignInSide() {
 							type="email"
 							id="email"
 							autoComplete="email"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
 						/>
 						<TextField
 							margin="normal"
@@ -92,7 +106,7 @@ export default function SignInSide() {
 							type="password"
 							id="password"
 							autoComplete="current-password"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
 						/>
 
 						<TextField
@@ -102,7 +116,7 @@ export default function SignInSide() {
 							label="Confirm Password"
 							type="password"
 							id="confirm_password"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
 						/>
 						<TextField
 							margin="normal"
@@ -111,7 +125,7 @@ export default function SignInSide() {
 							label="Phone Number"
 							type="number"
 							id="phone_number"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
 						/>
 						<TextField
 							margin="normal"
@@ -120,9 +134,15 @@ export default function SignInSide() {
 							label="Pincode"
 							type="pincode"
 							id="pincode"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
 						/>
-						<Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+						<Box
+							sx={{
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+							}}
+						>
 							<Button
 								type="submit"
 								variant="outlined"
@@ -152,7 +172,7 @@ export default function SignInSide() {
 					backgroundImage: login,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
-					backgroundColor: '#1F2128',
+					backgroundColor: "#1F2128",
 				}}
 			>
 				<img
@@ -164,7 +184,7 @@ export default function SignInSide() {
 					type="button"
 					variant="contained"
 					onClick={() => {
-						navigate("/");
+						navigate("/login");
 					}}
 					sx={{
 						mt: -145,
@@ -233,7 +253,7 @@ export default function SignInSide() {
 						opacity: 1,
 					}}
 				>
-					Welcome, Back
+					Hey there!
 				</Typography>
 			</Grid>
 		</Grid>

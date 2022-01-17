@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import login from "../../assets/images/login.jpg";
+import Landing from "../Landing/Landing";
 import "./Login.css";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -19,16 +19,45 @@ import SignInSide from "../Signup/Signup";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginSide() {
-	const handleSubmit = (event) => {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+
+	var myHeaders = new Headers();
+	myHeaders.append(
+		"Authorization",
+		"Basic Z3JlaGFzaGFoNkBnbWFpbC5jb206Z3JlaGFzaGFo"
+	);
+	myHeaders.append(
+		"Cookie",
+		"csrftoken=fQ5GcS3afHVVVyREFENw1Ub54RZgwlMkIFicrHrxOrddyB7xgNi46AaN5B6A4090; sessionid=vkfter6wndyr2xly3808yhu1meqwl3gn"
+	);
+
+	const handleSubmit = async (event) => {
 		event.preventDefault();
-		const data = new FormData(event.currentTarget);
+		const data = new FormData();
+		console.warn(email, password);
+		var formdata = new FormData();
+		formdata.append("email", email);
+		formdata.append("password", password);
+		fetch("https://findmyplug.herokuapp.com/login/", {
+			method: "POST",
+			headers: myHeaders,
+			body: formdata,
+			redirect: "follow",
+		})
+			.then((response) => response.text())
+			.then((result) => console.log(result));
 		// eslint-disable-next-line no-console
 	};
 
 	const navigate = useNavigate();
 
 	return (
-		<Grid container component="main" sx={{ height: "100vh", overflow: "hidden" }}>
+		<Grid
+			container
+			component="main"
+			sx={{ height: "100vh", overflow: "hidden" }}
+		>
 			<Grid
 				item
 				xs={12}
@@ -38,10 +67,17 @@ export default function LoginSide() {
 				elevation={6}
 				square
 				backgroundColor="#ececed"
-
 			>
 				<div>
-					<img src="https://drive.google.com/uc?export=download&id=1nugV0IRHoEz8iqO7Kx80NgmmRze0oCRM" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
+					<img
+						src="https://drive.google.com/uc?export=download&id=1nugV0IRHoEz8iqO7Kx80NgmmRze0oCRM"
+						style={{
+							marginTop: "25px",
+							display: "flex",
+							justifyContent: "flex-start",
+							marginLeft: "25px",
+						}}
+					/>
 
 					<Box
 						sx={{
@@ -80,6 +116,7 @@ export default function LoginSide() {
 								name="email"
 								autoComplete="email"
 								autoFocus
+								onChange={(e) => setEmail(e.target.value)}
 							/>
 							<TextField
 								margin="normal"
@@ -94,6 +131,7 @@ export default function LoginSide() {
 								type="password"
 								id="password"
 								autoComplete="current-password"
+								onChange={(e) => setPassword(e.target.value)}
 							/>
 							<FormControlLabel
 								control={<Checkbox value="remember" color="primary" />}
@@ -104,6 +142,7 @@ export default function LoginSide() {
 								fullWidth
 								variant="outlined"
 								sx={{ mt: 3, mb: 2 }}
+								// onSubmit={login}
 							>
 								Sign In
 							</Button>
@@ -115,13 +154,13 @@ export default function LoginSide() {
 			<Grid
 				item
 				xs={false}
-				sm={false}
+				sm={4}
 				md={4}
 				sx={{
 					backgroundImage: login,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
-					backgroundColor: '#1F2128',
+					backgroundColor: "#1F2128",
 				}}
 			>
 				<img
@@ -133,15 +172,12 @@ export default function LoginSide() {
 					type="button"
 					variant="contained"
 					onClick={() => {
-						navigate("/");
+						navigate("/login");
 					}}
 					sx={{
 						mt: -145,
 						mb: 2,
 						mr: 58,
-						// ml: -2,
-						// borderRadius: "50%",
-						// border: "red",
 						padding: "10px",
 						width: "100px",
 						backgroundColor: "black",
@@ -152,7 +188,7 @@ export default function LoginSide() {
 						paddingRight: "25px",
 						paddingTop: "10px",
 						paddingBottom: "10px",
-						// backgroundColor:"red",
+
 						color: "white",
 						fontWeight: "bold",
 					}}
@@ -182,7 +218,7 @@ export default function LoginSide() {
 						paddingRight: "25px",
 						paddingTop: "10px",
 						paddingBottom: "10px",
-						// backgroundColor:"red",
+
 						color: "white",
 						fontWeight: "bold",
 					}}
