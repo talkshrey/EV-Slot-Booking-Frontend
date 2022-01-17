@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import login from "../../assets/images/login.jpg";
 import "./Login.css";
 import Button from "@mui/material/Button";
@@ -10,18 +10,49 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
-import logo from '../../assets/images/LPlogo.png'
+import logo from "../../assets/images/LPlogo.png";
+import cover from "../../assets/images/login.png";
 
 export default function LoginSide() {
-	const handleSubmit = (event) => {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+
+	var myHeaders = new Headers();
+	myHeaders.append(
+		"Authorization",
+		"Basic Z3JlaGFzaGFoNkBnbWFpbC5jb206Z3JlaGFzaGFo"
+	);
+	myHeaders.append(
+		"Cookie",
+		"csrftoken=fQ5GcS3afHVVVyREFENw1Ub54RZgwlMkIFicrHrxOrddyB7xgNi46AaN5B6A4090; sessionid=vkfter6wndyr2xly3808yhu1meqwl3gn"
+	);
+
+	const handleSubmit = async (event) => {
 		event.preventDefault();
+		const data = new FormData();
+		console.warn(email, password);
+		var formdata = new FormData();
+		formdata.append("email", email);
+		formdata.append("password", password);
+		fetch("https://findmyplug.herokuapp.com/login/", {
+			method: "POST",
+			headers: myHeaders,
+			body: formdata,
+			redirect: "follow",
+		})
+			.then((response) => response.text())
+			.then((result) => console.log(result));
 		// eslint-disable-next-line no-console
 	};
 
 	const navigate = useNavigate();
 
 	return (
-		<Grid container component="main" sx={{ height: "100vh", overflow: "hidden" }}>
+		<Grid
+			container
+			component="main"
+			sx={{ height: "100vh", overflow: "hidden" }}
+		>
 			<Grid
 				item
 				xs={12}
@@ -31,7 +62,6 @@ export default function LoginSide() {
 				elevation={6}
 				square
 				backgroundColor="#ececed"
-
 			>
 				<div>
 					<img src={logo} alt="logo" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
@@ -73,6 +103,7 @@ export default function LoginSide() {
 								name="email"
 								autoComplete="email"
 								autoFocus
+								onChange={(e) => setEmail(e.target.value)}
 							/>
 							<TextField
 								margin="normal"
@@ -87,6 +118,7 @@ export default function LoginSide() {
 								type="password"
 								id="password"
 								autoComplete="current-password"
+								onChange={(e) => setPassword(e.target.value)}
 							/>
 							<FormControlLabel
 								control={<Checkbox value="remember" color="primary" />}
@@ -108,17 +140,17 @@ export default function LoginSide() {
 			<Grid
 				item
 				xs={false}
-				sm={false}
+				sm={4}
 				md={4}
 				sx={{
 					backgroundImage: login,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
-					backgroundColor: '#1F2128',
+					backgroundColor: "#1F2128",
 				}}
 			>
 				<img
-					src="https://drive.google.com/uc?export=download&id=1mUkyIFzvbAv64pRdRwrr3D10BR-tYUzA"
+					src={cover}
 					style={{ width: "100%", height: "100vh" }}
 					alt="login-img"
 				/>
@@ -127,15 +159,12 @@ export default function LoginSide() {
 					type="button"
 					variant="contained"
 					onClick={() => {
-						navigate("/");
+						navigate("/login");
 					}}
 					sx={{
 						mt: -145,
 						mb: 2,
 						mr: 58,
-						// ml: -2,
-						// borderRadius: "50%",
-						// border: "red",
 						padding: "10px",
 						width: "100px",
 						backgroundColor: "black",
@@ -146,7 +175,7 @@ export default function LoginSide() {
 						paddingRight: "25px",
 						paddingTop: "10px",
 						paddingBottom: "10px",
-						// backgroundColor:"red",
+
 						color: "white",
 						fontWeight: "bold",
 					}}
@@ -176,7 +205,7 @@ export default function LoginSide() {
 						paddingRight: "25px",
 						paddingTop: "10px",
 						paddingBottom: "10px",
-						// backgroundColor:"red",
+
 						color: "white",
 						fontWeight: "bold",
 					}}

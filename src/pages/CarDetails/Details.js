@@ -71,7 +71,7 @@ export default function Details() {
                         display="flex"
                         flexDirection="column"
                         alignItems="right"
-                        sx={{ mt: 8, fontWeight: "bold" }}
+                        sx={{ mt: 0, fontWeight: "bold" }}
                     >
                         REGISTER  YOUR DRIVE
                     </Typography>
@@ -80,7 +80,7 @@ export default function Details() {
                         component="form"
                         noValidate
                         onSubmit={handleSubmit}
-                        sx={{ mt: 1 }}
+                        sx={{ mt:1 }}
                     >
                         <TextField
                             margin="normal"
@@ -103,6 +103,7 @@ export default function Details() {
                             autoComplete="plug type"
                             sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
                             onChange={(e)=>setType(e.target.value)}
+
                         />
                         <TextField
                             margin="normal"
