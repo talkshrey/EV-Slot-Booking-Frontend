@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import landingScreenImg from './image 3.png'
+import landingScreenImg from '../../assets/images/landing.png'
 import './Landing.css'
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';

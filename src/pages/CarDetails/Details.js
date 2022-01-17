@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import logo from "../../assets/images/LPlogo.png";
-import cover from "../CarDetails/CarDetails.png";
+import cover from "../../assets/images/cover.png";
 import { useState } from "react";
 
 export default function Details() {

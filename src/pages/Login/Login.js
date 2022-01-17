@@ -11,7 +11,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/LPlogo.png";
-import cover from "../../assets/images/login.png";
+import cover from "../../assets/images/cover.png";
 
 export default function LoginSide() {
 	const [email, setEmail] = useState("");
@@ -29,7 +29,6 @@ export default function LoginSide() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		const data = new FormData();
 		console.warn(email, password);
 		var formdata = new FormData();
 		formdata.append("email", email);
