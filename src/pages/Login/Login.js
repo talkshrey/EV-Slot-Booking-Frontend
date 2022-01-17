@@ -1,22 +1,17 @@
 import React, { useState } from "react";
 import login from "../../assets/images/login.jpg";
-import Landing from "../Landing/Landing";
 import "./Login.css";
 import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { color } from "@mui/system";
-import SignInSide from "../Signup/Signup";
-// import {useHistory} from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import logo from "../../assets/images/LPlogo.png";
+import cover from "../../assets/images/cover.png";
 
 export default function LoginSide() {
 	const [email, setEmail] = useState("");
@@ -34,7 +29,6 @@ export default function LoginSide() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		const data = new FormData();
 		console.warn(email, password);
 		var formdata = new FormData();
 		formdata.append("email", email);
@@ -69,15 +63,7 @@ export default function LoginSide() {
 				backgroundColor="#ececed"
 			>
 				<div>
-					<img
-						src="https://drive.google.com/uc?export=download&id=1nugV0IRHoEz8iqO7Kx80NgmmRze0oCRM"
-						style={{
-							marginTop: "25px",
-							display: "flex",
-							justifyContent: "flex-start",
-							marginLeft: "25px",
-						}}
-					/>
+					<img src={logo} alt="logo" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
 
 					<Box
 						sx={{
@@ -142,7 +128,6 @@ export default function LoginSide() {
 								fullWidth
 								variant="outlined"
 								sx={{ mt: 3, mb: 2 }}
-								// onSubmit={login}
 							>
 								Sign In
 							</Button>
@@ -164,8 +149,9 @@ export default function LoginSide() {
 				}}
 			>
 				<img
-					src="https://drive.google.com/uc?export=download&id=1mUkyIFzvbAv64pRdRwrr3D10BR-tYUzA"
+					src={cover}
 					style={{ width: "100%", height: "100vh" }}
+					alt="login-img"
 				/>
 				<Button
 					className="login_button"
