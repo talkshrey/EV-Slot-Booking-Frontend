@@ -29,7 +29,6 @@ export default function LoginSide() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		console.warn(email, password);
 		var formdata = new FormData();
 		formdata.append("email", email);
 		formdata.append("password", password);
@@ -39,8 +38,11 @@ export default function LoginSide() {
 			body: formdata,
 			redirect: "follow",
 		})
-			.then((response) => response.text())
-			.then((result) => console.log(result));
+			.then((response) => response.json())
+			.then((result) => {
+				console.log(result.token)
+				localStorage.setItem('token', result.token)
+			});
 		// eslint-disable-next-line no-console
 	};
 
