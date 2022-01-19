@@ -17,7 +17,7 @@ export default function Details() {
     const [vin, setVin] = useState()
 
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Token e9f8d73db43969b2613ac1eee60f4aae258ddfc5");
+    myHeaders.append("Authorization", `Token ${localStorage.getItem('token')}`);
     myHeaders.append("Cookie", "csrftoken=9G4FaPL7CN11nJAhTTLLNd48zCvchBmcrDKrsVkGgZN1NblNX29YJFRR8WkTYbD1");
       
     const handleSubmit = (event) => {
@@ -47,7 +47,7 @@ export default function Details() {
         <Grid container component="main" sx={{ height: "100vh", overflow: "hidden" }}>
             <Grid
                 item
-                xs={12}
+                xs={8}
                 sm={8}
                 md={8}
                 component={Paper}
@@ -89,7 +89,7 @@ export default function Details() {
                             label="Model"
                             name="Model"
                             autoComplete="Model"
-                            sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+                            sx={{ mt: 3, mb: 2, mr: 5, width: "40%" }}
                             onChange={(e)=>setModel(e.target.value)}
                         />
 
@@ -101,7 +101,7 @@ export default function Details() {
                             type="text"
                             id="plug_type"
                             autoComplete="plug type"
-                            sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+                            sx={{ mt: 3, mb: 2, mr: 5, width: "40%" }}
                             onChange={(e)=>setType(e.target.value)}
 
                         />
@@ -113,7 +113,7 @@ export default function Details() {
                             type="text"
                             id="Vehicle registration no."
                             autoComplete="Vehicle registration no."
-                            sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+                            sx={{ mt: 3, mb: 2, mr: 5, width: "40%" }}
                             onChange={(e)=>setReg(e.target.value)}
                         />
 
@@ -124,7 +124,7 @@ export default function Details() {
                             label="VIN"
                             type="number"
                             id="VIN"
-                            sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
+                            sx={{ mt: 3, mb: 2, mr: 5, width: "40%" }}
                             onChange={(e)=>setVin(e.target.value)}
                         />
 
@@ -157,8 +157,8 @@ export default function Details() {
 
             <Grid
                 item
-                xs={false}
-                sm={false}
+                xs={4}
+                sm={4}
                 md={4}
                 sx={{
                     backgroundSize: "cover",
@@ -169,14 +169,14 @@ export default function Details() {
                 <img
                     src={cover}
                     alt="cover-img"
-                    style={{ width: "100%", height: "100vh" }}
+                    style={{ width: "100%" }}
                 />
 
                 <Typography
                     component="h6"
                     variant="h2"
                     fontWeight="bold"
-                    fontSize="35px"
+                    fontSize="2rem"
                     color="white"
                     sx={{
                         mt: -55,
