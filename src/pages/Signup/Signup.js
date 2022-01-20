@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import login from "../../assets/images/login.jpg";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -16,11 +16,42 @@ import { color } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 
 export default function SignInSide() {
+	const [person, setPerson] = useState({ email: '', password: '', phone: '', pincode: '' });
+	const [people, setPeople] = useState([]);
+
+	const handleChange = (e) => {
+		const name = e.target.name
+		const value = e.target.value
+		setPerson({ ...person, [name]: value })
+	}
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		const data = new FormData(event.currentTarget);
-		// eslint-disable-next-line no-console
+		if (person.email && person.password && person.phone && person.pincode) {
+			const newPerson = { ...person };
+			setPeople([...people, newPerson]);
+			setPerson({ email: '', password: '', phone: '', pincode: '' });
+
+			var formdata = new FormData();
+			formdata.append("email", newPerson.email);
+			formdata.append("password", person.password);
+			formdata.append("phone", person.phone);
+			formdata.append("pincode", person.pincode);
+
+			var requestOptions = {
+				method: 'POST',
+				body: formdata,
+				redirect: 'follow'
+			};
+
+			fetch("https://findmyplug.herokuapp.com/register/", requestOptions)
+				.then(response => response)
+				.then(result => console.log(result))
+				.catch(error => console.log('fgsla', error));
+		}
 	};
+
+
 
 	let navigate = useNavigate();
 
@@ -67,27 +98,22 @@ export default function SignInSide() {
 						<TextField
 							margin="normal"
 							required
-							id="username"
-							label="Username"
-							name="username"
+							id="email"
+							label="Email"
+							name="email"
+							value={person.email}
+							onChange={handleChange}
 							autoComplete="email"
 							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
 						/>
 
-						<TextField
-							margin="normal"
-							required
-							name="email"
-							label="Email"
-							type="email"
-							id="email"
-							autoComplete="email"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
-						/>
+
 						<TextField
 							margin="normal"
 							required
 							name="password"
+							value={person.password}
+							onChange={handleChange}
 							label="Password"
 							type="password"
 							id="password"
@@ -95,20 +121,14 @@ export default function SignInSide() {
 							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
 						/>
 
+
 						<TextField
 							margin="normal"
 							required
-							name="confirm_password"
-							label="Confirm Password"
-							type="password"
-							id="confirm_password"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
-						/>
-						<TextField
-							margin="normal"
-							required
-							name="phoneNumber"
+							name="phone"
 							label="Phone Number"
+							value={person.phone}
+							onChange={handleChange}
 							type="number"
 							id="phone_number"
 							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
@@ -118,6 +138,8 @@ export default function SignInSide() {
 							required
 							name="pincode"
 							label="Pincode"
+							value={person.pincode}
+							onChange={handleChange}
 							type="pincode"
 							id="pincode"
 							sx={{ mt: 3, mb: 2, mr: 5, width: "400px" }}
@@ -126,6 +148,7 @@ export default function SignInSide() {
 							<Button
 								type="submit"
 								variant="outlined"
+								onClick={handleSubmit}
 								sx={{
 									width: "300px",
 									height: "50px",
