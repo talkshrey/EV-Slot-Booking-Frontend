@@ -59,6 +59,20 @@
 	background-color: #ececed !important;
 }
 
-.login_button :hover {
-	background-color: red !important;
+
+.login_button {
+   /* font-family: Georgia, 'Times New Roman', Times, serif  !important; */
+   font-weight: bold !important;
+   margin-top: 5px ;
 }
+/* 
+Button: {
+    '&:hover': {
+      backgroundColor: '#ffffff',
+      boxShadow: 'none',
+    },
+    '&:active': {
+      boxShadow: 'none',
+      backgroundColor: '#3c52b2',
+    },
+  }, */

@@ -154,7 +154,11 @@ export default function SignInSide() {
 									justifyContent: "center",
 									alignItems: "center",
 									flexDirection: "column",
+									fontWeight:"bold",
+									"&:hover": { color: "#69FFF1", backgroundColor:"black"}
+									
 								}}
+								// sx={{ "&:hover": { color: "#69FFF1", backgroundColor:"black"} }}
 							>
 								Sign Up
 							</Button>
@@ -206,6 +210,7 @@ export default function SignInSide() {
 						// backgroundColor:"red",
 						color: "white",
 						fontWeight: "bold",
+						"&:hover": { color:"black", backgroundColor:"white"}
 					}}
 				>
 					Login
@@ -236,6 +241,7 @@ export default function SignInSide() {
 						// backgroundColor:"red",
 						color: "white",
 						fontWeight: "bold",
+						"&:hover": { color:"black", backgroundColor:"white"}
 					}}
 				>
 					Sign Up

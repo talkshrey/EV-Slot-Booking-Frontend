@@ -141,8 +141,10 @@ export default function LoginSide() {
 								type="submit"
 								fullWidth
 								variant="outlined"
-								sx={{ mt: 3, mb: 2 }}
+								sx={{ mt: 3, mb: 2 , fontSize:"20px"}}
+								className="login_button"
 								// onSubmit={login}
+								sx={{ "&:hover": { color: "#69FFF1", backgroundColor:"black"} }}
 							>
 								Sign In
 							</Button>
@@ -191,6 +193,7 @@ export default function LoginSide() {
 
 						color: "white",
 						fontWeight: "bold",
+						"&:hover": { color:"black", backgroundColor:"white"}
 					}}
 				>
 					Login
@@ -221,7 +224,9 @@ export default function LoginSide() {
 
 						color: "white",
 						fontWeight: "bold",
+						"&:hover": { color:"black", backgroundColor:"white"}
 					}}
+					// sx={{ "&:hover": { backgroundColor:"white"} }}
 				>
 					Sign Up
 				</Button>

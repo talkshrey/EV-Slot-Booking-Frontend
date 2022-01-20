@@ -8,6 +8,7 @@ import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router } from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
 import Details from "./pages/CarDetails/Details";
+import Booking from "./pages/BookingPage/BookingPage"
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
 					<Route path='/review' element={<Review />} />
 					<Route exact path='/' element={<Landing />} />
 					<Route exact path='/details' element={<Details />} />
+					<Route exact path='/booking' element={<Booking />} />
 
 				</Routes>
 			</div>
