@@ -1,0 +1,32 @@
+.st_name {
+	font-size: 12px !important;
+    color: white !important;
+}
+
+.address {
+	font-size: 12px !important;
+    color: white !important;
+}
+
+.ph_number {
+	font-size: 12px !important;
+    color: white !important;
+}
+
+.buttons {
+	padding: 0 !important;
+    font-size: 12px !important;
+}
+
+.card_content {
+	padding: 0 !important;
+    background-color: rgb(10, 10, 10);
+    color: white;
+    
+    text-align: left !important;
+}
+
+.save_button{
+   margin-left: 2em !important;
+    
+}
