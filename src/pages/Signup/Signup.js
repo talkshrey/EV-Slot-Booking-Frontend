@@ -16,11 +16,13 @@ export default function SignInSide() {
 	const handleChange = (e) => {
 		const name = e.target.name
 		const value = e.target.value
-		setPerson({ ...person, [name]: value })
+		setPerson({ ...person, [name]: value ? value : null })
 	}
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		console.log(person.email)
+		console.log(person);
 		if (person.email && person.password && person.phone && person.pincode) {
 			const newPerson = { ...person };
 			setPeople([...people, newPerson]);
@@ -50,14 +52,7 @@ export default function SignInSide() {
 	let navigate = useNavigate();
 
 	return (
-		<Grid
-			container
-			component="main"
-			sx={{
-				height: "100vh",
-				overflow: "hidden"
-			}}
-		>
+		<Grid container component="main" sx={{ height: "100vh", overflow: "hidden" }}>
 			<Grid
 				item
 				xs={12}
@@ -68,14 +63,15 @@ export default function SignInSide() {
 				square
 				backgroundColor="#ececed"
 			>
-				<img src={logo} alt="logo" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
+				<img src="https://drive.google.com/uc?export=download&id=1nugV0IRHoEz8iqO7Kx80NgmmRze0oCRM" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
 				<Box
 					sx={{
-						my: 3,
-						mx: 4,
+						// my: 3,
+						// mx: 4,
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
+						justifyContent: 'center'
 					}}
 				>
 					<Typography
@@ -92,76 +88,65 @@ export default function SignInSide() {
 					<Box
 						component="form"
 						noValidate
-						onSubmit={handleSubmit}
-						sx={{ mt: 1 }}
+						sx={{
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "center",
+							justifyContent: 'center'
+						}}
 					>
-						<TextField
-							margin="normal"
-							required
-							id="email"
-							label="Email"
-							name="email"
-							value={person.email}
-							onChange={handleChange}
-							autoComplete="email"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
+						<Box>
+							<TextField
+								margin="normal"
+								required
+								value={person.email}
+								onChange={handleChange}
+								name="email"
+								label="Email"
+								type="email"
+								id="email"
+								sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
+							/>
+							<TextField
+								margin="normal"
+								required
+								name="phone"
+								label="Phone Number"
+								value={person.phone}
+								onChange={handleChange}
+								type="phone"
+								id="phone"
+								sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
+							/>
+						</Box>
 
-						<TextField
-							margin="normal"
-							required
-							name="email"
-							label="Email"
-							type="email"
-							id="email"
-							autoComplete="email"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
-						<TextField
-							margin="normal"
-							required
-							name="password"
-							value={person.password}
-							onChange={handleChange}
-							label="Password"
-							type="password"
-							id="password"
-							autoComplete="current-password"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
+						<Box>
 
+							<TextField
+								margin="normal"
+								required
+								name="pincode"
+								label="Pincode"
+								value={person.pincode}
+								onChange={handleChange}
+								type="pincode"
+								id="pincode"
+								sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
+							/>
+							<TextField
+								margin="normal"
+								required
+								name="password"
+								value={person.password}
+								onChange={handleChange}
+								label="Password"
+								type="password"
+								id="password"
+								autoComplete="current-password"
+								sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
+							/>
+						</Box>
 
-						<TextField
-							margin="normal"
-							required
-							name="confirm_password"
-							label="Confirm Password"
-							type="password"
-							id="confirm_password"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
-						<TextField
-							margin="normal"
-							required
-							name="phoneNumber"
-							label="Phone Number"
-							value={person.phone}
-							onChange={handleChange}
-							type="number"
-							id="phone_number"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
-						<TextField
-							margin="normal"
-							required
-							name="pincode"
-							label="Pincode"
-							value={person.pincode}
-							onChange={handleChange}
-							type="pincode"
-							id="pincode"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
 						<Box
 							sx={{
 								display: "flex",
@@ -202,7 +187,7 @@ export default function SignInSide() {
 				}}
 			>
 				<img
-					src={login}
+					src="https://drive.google.com/uc?export=download&id=1mUkyIFzvbAv64pRdRwrr3D10BR-tYUzA"
 					alt="cover-img"
 					style={{ width: "100%", height: "100vh" }}
 				/>
