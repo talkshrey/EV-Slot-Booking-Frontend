@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import login from "../../assets/images/login.jpg";
+import login from "../../assets/images/cover.png";
 import "./Login.css";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
