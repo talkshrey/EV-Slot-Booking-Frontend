@@ -1,4 +1,6 @@
-import * as React from "react";
+
+import { useState } from "react";
+import login from "../../assets/images/login.jpg";
 import cover from "../../assets/images/cover.png";
 import logo from "../../assets/images/LPlogo.png";
 import Button from "@mui/material/Button";
@@ -10,21 +12,49 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 
 export default function SignInSide() {
+	const [person, setPerson] = useState({ email: '', password: '', phone: '', pincode: '' });
+	const [people, setPeople] = useState([]);
+
+	const handleChange = (e) => {
+		const name = e.target.name
+		const value = e.target.value
+		setPerson({ ...person, [name]: value ? value : null })
+	}
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		// eslint-disable-next-line no-console
+		console.log(person.email)
+		console.log(person);
+		if (person.email && person.password && person.phone && person.pincode) {
+			const newPerson = { ...person };
+			setPeople([...people, newPerson]);
+			setPerson({ email: '', password: '', phone: '', pincode: '' });
+
+			var formdata = new FormData();
+			formdata.append("email", newPerson.email);
+			formdata.append("password", person.password);
+			formdata.append("phone", person.phone);
+			formdata.append("pincode", person.pincode);
+
+			var requestOptions = {
+				method: 'POST',
+				body: formdata,
+				redirect: 'follow'
+			};
+
+			fetch("https://findmyplug.herokuapp.com/register/", requestOptions)
+				.then(response => response)
+				.then(result => console.log(result))
+				.catch(error => console.log('fgsla', error));
+		}
 	};
+
+
 
 	let navigate = useNavigate();
 
 	return (
-		<Grid
-			container
-			component="main"
-			sx={{ height: "100vh",
-			 overflow: "hidden"
-			 }}
-		>
+		<Grid container component="main" sx={{ height: "100vh", overflow: "hidden" }}>
 			<Grid
 				item
 				xs={12}
@@ -35,14 +65,15 @@ export default function SignInSide() {
 				square
 				backgroundColor="#ececed"
 			>
-				<img src={logo} alt="logo" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
+				<img src="https://drive.google.com/uc?export=download&id=1nugV0IRHoEz8iqO7Kx80NgmmRze0oCRM" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
 				<Box
 					sx={{
-						my: 3,
-						mx: 4,
+						// my: 3,
+						// mx: 4,
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
+						justifyContent: 'center'
 					}}
 				>
 					<Typography
@@ -59,67 +90,65 @@ export default function SignInSide() {
 					<Box
 						component="form"
 						noValidate
-						onSubmit={handleSubmit}
-						sx={{ mt: 1 }}
+						sx={{
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "center",
+							justifyContent: 'center'
+						}}
 					>
-						<TextField
-							margin="normal"
-							required
-							id="username"
-							label="Username"
-							name="username"
-							autoComplete="email"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
+						<Box>
+							<TextField
+								margin="normal"
+								required
+								value={person.email}
+								onChange={handleChange}
+								name="email"
+								label="Email"
+								type="email"
+								id="email"
+								sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
+							/>
+							<TextField
+								margin="normal"
+								required
+								name="phone"
+								label="Phone Number"
+								value={person.phone}
+								onChange={handleChange}
+								type="phone"
+								id="phone"
+								sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
+							/>
+						</Box>
 
-						<TextField
-							margin="normal"
-							required
-							name="email"
-							label="Email"
-							type="email"
-							id="email"
-							autoComplete="email"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
-						<TextField
-							margin="normal"
-							required
-							name="password"
-							label="Password"
-							type="password"
-							id="password"
-							autoComplete="current-password"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
+						<Box>
 
-						<TextField
-							margin="normal"
-							required
-							name="confirm_password"
-							label="Confirm Password"
-							type="password"
-							id="confirm_password"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
-						<TextField
-							margin="normal"
-							required
-							name="phoneNumber"
-							label="Phone Number"
-							type="number"
-							id="phone_number"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
-						<TextField
-							margin="normal"
-							required
-							name="pincode"
-							label="Pincode"
-							type="pincode"
-							id="pincode"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
+							<TextField
+								margin="normal"
+								required
+								name="pincode"
+								label="Pincode"
+								value={person.pincode}
+								onChange={handleChange}
+								type="pincode"
+								id="pincode"
+								sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
+							/>
+							<TextField
+								margin="normal"
+								required
+								name="password"
+								value={person.password}
+								onChange={handleChange}
+								label="Password"
+								type="password"
+								id="password"
+								autoComplete="current-password"
+								sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
+							/>
+						</Box>
+
 						<Box
 							sx={{
 								display: "flex",
@@ -130,6 +159,7 @@ export default function SignInSide() {
 							<Button
 								type="submit"
 								variant="outlined"
+								onClick={handleSubmit}
 								sx={{
 									width: "300px",
 									height: "50px",
@@ -147,9 +177,9 @@ export default function SignInSide() {
 								Sign Up
 							</Button>
 						</Box>
-					</Box>
-				</Box>
-			</Grid>
+					</Box >
+				</Box >
+			</Grid >
 
 			<Grid
 				item
@@ -246,6 +276,6 @@ export default function SignInSide() {
 					Hey there!
 				</Typography>
 			</Grid>
-		</Grid>
+		</Grid >
 	);
 }
