@@ -1,6 +1,5 @@
 
 import { useState } from "react";
-import login from "../../assets/images/login.jpg";
 import cover from "../../assets/images/cover.png";
 import logo from "../../assets/images/LPlogo.png";
 import Button from "@mui/material/Button";
@@ -65,7 +64,7 @@ export default function SignInSide() {
 				square
 				backgroundColor="#ececed"
 			>
-				<img src="https://drive.google.com/uc?export=download&id=1nugV0IRHoEz8iqO7Kx80NgmmRze0oCRM" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
+				<img src={logo} alt="cover-img" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
 				<Box
 					sx={{
 						// my: 3,

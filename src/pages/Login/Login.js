@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import login from "../../assets/images/login.jpg";
+import login from "../../assets/images/cover.png";
 import "./Login.css";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -27,7 +27,7 @@ export default function LoginSide() {
 		"csrftoken=fQ5GcS3afHVVVyREFENw1Ub54RZgwlMkIFicrHrxOrddyB7xgNi46AaN5B6A4090; sessionid=vkfter6wndyr2xly3808yhu1meqwl3gn"
 	);
 
-	const handleSubmit = async (event) => {
+	const handleSubmit = (event) => {
 		event.preventDefault();
 		var formdata = new FormData();
 		formdata.append("email", email);
@@ -40,7 +40,7 @@ export default function LoginSide() {
 		})
 			.then((response) => response.json())
 			.then((result) => {
-				console.log(result.token)
+				console.log(result)
 				localStorage.setItem('token', result.token)
 			});
 		// eslint-disable-next-line no-console
