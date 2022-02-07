@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+
+import { useState } from "react";
 import login from "../../assets/images/login.jpg";
+import cover from "../../assets/images/cover.png";
 import logo from "../../assets/images/LPlogo.png";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -166,7 +168,11 @@ export default function SignInSide() {
 									justifyContent: "center",
 									alignItems: "center",
 									flexDirection: "column",
+									fontWeight:"bold",
+									"&:hover": { color: "#69FFF1", backgroundColor:"black"}
+									
 								}}
+								// sx={{ "&:hover": { color: "#69FFF1", backgroundColor:"black"} }}
 							>
 								Sign Up
 							</Button>
@@ -187,7 +193,7 @@ export default function SignInSide() {
 				}}
 			>
 				<img
-					src="https://drive.google.com/uc?export=download&id=1mUkyIFzvbAv64pRdRwrr3D10BR-tYUzA"
+					src={cover}
 					alt="cover-img"
 					style={{ width: "100%", height: "100vh" }}
 				/>
@@ -218,6 +224,7 @@ export default function SignInSide() {
 						// backgroundColor:"red",
 						color: "white",
 						fontWeight: "bold",
+						"&:hover": { color:"black", backgroundColor:"white"}
 					}}
 				>
 					Login
@@ -248,6 +255,7 @@ export default function SignInSide() {
 						// backgroundColor:"red",
 						color: "white",
 						fontWeight: "bold",
+						"&:hover": { color:"black", backgroundColor:"white"}
 					}}
 				>
 					Sign Up
