@@ -121,15 +121,20 @@ export default function LoginSide() {
 								autoComplete="current-password"
 								onChange={(e) => setPassword(e.target.value)}
 							/>
-							<FormControlLabel
-								control={<Checkbox value="remember" color="primary" />}
-								label="Remember me"
-							/>
+							<p style={{ textAlign: 'center', fontSize: '0.89rem', color: '#1F2128' }}>Don't have an account? <span onClick={() => navigate('/signup')} style={{ cursor: 'pointer', color: 'blue' }}>Sign Up</span></p>
 							<Button
+								className="main_btn"
 								type="submit"
 								fullWidth
 								variant="outlined"
-								sx={{ mt: 3, mb: 2 }}
+								sx={{
+									height: "50px",
+									mt: 4,
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+									flexDirection: "column"
+								}}
 							>
 								Sign In
 							</Button>
@@ -167,23 +172,20 @@ export default function LoginSide() {
 						mb: 2,
 						mr: 58,
 						padding: "10px",
-						width: "100px",
-						backgroundColor: "black",
-						borderTopRightRadius: "50%",
-						borderBottomRightRadius: "50%",
-						borderTopLeftRadius: "2%",
-						borderBottomLeftRadius: "2%",
+						width: "110px",
+						backgroundColor: "#ECECED",
 						paddingRight: "25px",
 						paddingTop: "10px",
 						paddingBottom: "10px",
-
-						color: "white",
+						color: "#1F2128",
 						fontWeight: "bold",
+						borderRadius: '0px 25px 25px 0px !important'
 					}}
 				>
 					Login
 				</Button>
 				<Button
+					className="login_button"
 					type="button"
 					variant="contained"
 					onClick={() => {
@@ -193,22 +195,15 @@ export default function LoginSide() {
 						mt: -135,
 						mb: 2,
 						mr: 58,
-						// ml: -2,
-						// borderRadius: "50%",
-						// border: "red",
 						padding: "10px",
-						width: "100px",
-						backgroundColor: "black",
-						borderTopRightRadius: "50%",
-						borderBottomRightRadius: "50%",
-						borderTopLeftRadius: "2%",
-						borderBottomLeftRadius: "2%",
+						width: "110px",
+						backgroundColor: "#1F2128",
 						paddingRight: "25px",
 						paddingTop: "10px",
 						paddingBottom: "10px",
-
-						color: "white",
+						color: "#ECECED",
 						fontWeight: "bold",
+						borderRadius: '0px 25px 25px 0px !important',
 					}}
 				>
 					Sign Up
