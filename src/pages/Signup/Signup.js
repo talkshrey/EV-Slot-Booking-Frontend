@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+
+import { useState } from "react";
+import cover from "../../assets/images/cover.png";
+import logo from "../../assets/images/LPlogo.png";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
@@ -61,7 +64,7 @@ export default function SignInSide() {
 				square
 				backgroundColor="#ececed"
 			>
-				<img src="https://drive.google.com/uc?export=download&id=1nugV0IRHoEz8iqO7Kx80NgmmRze0oCRM" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
+				<img src={logo} alt="cover-img" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
 				<Box
 					sx={{
 						display: "flex",
@@ -165,7 +168,11 @@ export default function SignInSide() {
 									justifyContent: "center",
 									alignItems: "center",
 									flexDirection: "column",
+									fontWeight: "bold",
+									"&:hover": { color: "#69FFF1", backgroundColor: "black" }
+
 								}}
+							// sx={{ "&:hover": { color: "#69FFF1", backgroundColor:"black"} }}
 							>
 								Sign Up
 							</Button>
@@ -186,7 +193,7 @@ export default function SignInSide() {
 				}}
 			>
 				<img
-					src="https://drive.google.com/uc?export=download&id=1mUkyIFzvbAv64pRdRwrr3D10BR-tYUzA"
+					src={cover}
 					alt="cover-img"
 					style={{ width: "100%", height: "100vh" }}
 				/>

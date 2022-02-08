@@ -10,7 +10,7 @@ export default function Review() {
             <div className="nav-bar">
                 <div className="logo"> <img src={logo} alt="logo"/> </div>
                 <div className="headers">
-                    <Link to="/book" className="title"> <div> Book </div> </Link>  
+                    <Link to="/booking" className="title"> <div> Book </div> </Link>  
                     <Link to="/review" className="title"> <div> Reviews </div> </Link> 
                     <Link to="/payment" className="title"> <div> Payment </div> </Link> 
                 </div>

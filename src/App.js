@@ -6,6 +6,7 @@ import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Outlet, Navigate } from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
 import Details from "./pages/CarDetails/Details";
+import Booking from "./pages/BookingPage/BookingPage"
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
 				<Routes>
 					<Route exact path='/login' element={<LoginSide />} />
 					<Route path='/signup' element={<SignInSide />} />
+					<Route path="/booking" element={<Booking/>} />
 
 					<Route path='/' element={<PrivateRoute />} >
 						<Route path='/' element={<Landing/>}/>
