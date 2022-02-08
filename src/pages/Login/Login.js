@@ -121,17 +121,20 @@ export default function LoginSide() {
 								autoComplete="current-password"
 								onChange={(e) => setPassword(e.target.value)}
 							/>
-							<FormControlLabel
-								control={<Checkbox value="remember" color="primary" />}
-								label="Remember me"
-							/>
+							<p style={{ textAlign: 'center', fontSize: '0.89rem', color: '#1F2128' }}>Don't have an account? <span onClick={() => navigate('/signup')} style={{ cursor: 'pointer', color: 'blue' }}>Sign Up</span></p>
 							<Button
+								className="main_btn"
 								type="submit"
 								fullWidth
 								variant="outlined"
-								className="login_button"
-								// onSubmit={login}
-								sx={{ "&:hover": { color: "#69FFF1", backgroundColor:"black"} }}
+								sx={{
+									height: "50px",
+									mt: 4,
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+									flexDirection: "column"
+								}}
 							>
 								Sign In
 							</Button>
@@ -169,24 +172,20 @@ export default function LoginSide() {
 						mb: 2,
 						mr: 58,
 						padding: "10px",
-						width: "100px",
-						backgroundColor: "black",
-						borderTopRightRadius: "50%",
-						borderBottomRightRadius: "50%",
-						borderTopLeftRadius: "2%",
-						borderBottomLeftRadius: "2%",
+						width: "110px",
+						backgroundColor: "#ECECED",
 						paddingRight: "25px",
 						paddingTop: "10px",
 						paddingBottom: "10px",
-
-						color: "white",
+						color: "#1F2128",
 						fontWeight: "bold",
-						"&:hover": { color:"black", backgroundColor:"white"}
+						borderRadius: '0px 25px 25px 0px !important'
 					}}
 				>
 					Login
 				</Button>
 				<Button
+					className="login_button"
 					type="button"
 					variant="contained"
 					onClick={() => {
@@ -196,25 +195,17 @@ export default function LoginSide() {
 						mt: -135,
 						mb: 2,
 						mr: 58,
-						// ml: -2,
-						// borderRadius: "50%",
-						// border: "red",
 						padding: "10px",
-						width: "100px",
-						backgroundColor: "black",
-						borderTopRightRadius: "50%",
-						borderBottomRightRadius: "50%",
-						borderTopLeftRadius: "2%",
-						borderBottomLeftRadius: "2%",
+						width: "110px",
+						backgroundColor: "#1F2128",
 						paddingRight: "25px",
 						paddingTop: "10px",
 						paddingBottom: "10px",
-
-						color: "white",
+						color: "#ECECED",
 						fontWeight: "bold",
-						"&:hover": { color:"black", backgroundColor:"white"}
+						borderRadius: '0px 25px 25px 0px !important',
 					}}
-					// sx={{ "&:hover": { backgroundColor:"white"} }}
+				// sx={{ "&:hover": { backgroundColor:"white"} }}
 				>
 					Sign Up
 				</Button>
