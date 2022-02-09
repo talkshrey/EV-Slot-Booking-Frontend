@@ -12,6 +12,9 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/LPlogo.png";
 import cover from "../../assets/images/cover.png";
+import { Formik } from "formik";
+import * as EmailValidator from "email-validator"; // used when validating with a self-implemented approach
+import * as Yup from "yup"; // used when validating with a pre-built solution
 
 export default function LoginSide() {
 	const [email, setEmail] = useState("");
@@ -47,6 +50,8 @@ export default function LoginSide() {
 	};
 
 	const navigate = useNavigate();
+
+	
 
 	return (
 		<Grid
@@ -131,7 +136,7 @@ export default function LoginSide() {
 								variant="outlined"
 								className="login_button"
 								// onSubmit={login}
-								sx={{ "&:hover": { color: "#69FFF1", backgroundColor:"black"} }}
+								sx={{ "&:hover": { color: "#69FFF1", backgroundColor:"black"} , mt:3 }}
 							>
 								Sign In
 							</Button>

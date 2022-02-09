@@ -9,8 +9,23 @@ import Typography from "@mui/material/Typography";
 import { Box, Rating } from "@mui/material";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import axios from 'axios';
 
 export default function CardInfo() {
+
+	const url = 'https://findmyplug.herokuapp.com/swagger/';
+	const [item , setItem] = React.useState(null)
+
+	axios.get(url)
+		.then(response => {
+			setItem(response.data)
+		})
+
+	// fetch('https://findmyplug.herokuapp.com/swagger')
+	// .then(res => res.json())
+	// .then(data => console.log(data))
+	
+
 	return (
 
 <Card sx={{ maxWidth: 200 }}>

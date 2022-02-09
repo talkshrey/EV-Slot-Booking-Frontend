@@ -13,6 +13,7 @@ import Grid from "@material-ui/core/Grid";
 import CardInfo from "./CardInfo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
+import logo from '../../assets/images/LPlogo.png'
 
 export default function Booking() {
 	return (
@@ -44,14 +45,13 @@ export default function Booking() {
 
 
 <div className="nav-bar">
-                <div className="logo"> Logo </div>
+                <div className="logo"> <img src={logo} alt="logo"/> </div>
                 <div className="headers">
                     <Link to="/book" className="title"> <div> Book </div> </Link>  
-                    <Link to="/review" className="title"> <div> Review </div> </Link> 
+                    <Link to="/review" className="title"> <div> Reviews </div> </Link> 
                     <Link to="/payment" className="title"> <div> Payment </div> </Link> 
                 </div>
             </div>
-
 
 			{/* <Typography>Book</Typography>
 			<Typography>Review</Typography> */}
