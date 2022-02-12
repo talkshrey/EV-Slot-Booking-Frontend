@@ -1,4 +1,5 @@
-import * as React from "react";
+
+import { useState } from "react";
 import cover from "../../assets/images/cover.png";
 import logo from "../../assets/images/LPlogo.png";
 import Button from "@mui/material/Button";
@@ -10,21 +11,49 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 
 export default function SignInSide() {
+	const [person, setPerson] = useState({ email: '', password: '', phone: '', pincode: '' });
+	const [people, setPeople] = useState([]);
+
+	const handleChange = (e) => {
+		const name = e.target.name
+		const value = e.target.value
+		setPerson({ ...person, [name]: value ? value : null })
+	}
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		// eslint-disable-next-line no-console
+		console.log(person.email)
+		console.log(person);
+		if (person.email && person.password && person.phone && person.pincode) {
+			const newPerson = { ...person };
+			setPeople([...people, newPerson]);
+			setPerson({ email: '', password: '', phone: '', pincode: '' });
+
+			var formdata = new FormData();
+			formdata.append("email", newPerson.email);
+			formdata.append("password", person.password);
+			formdata.append("phone", person.phone);
+			formdata.append("pincode", person.pincode);
+
+			var requestOptions = {
+				method: 'POST',
+				body: formdata,
+				redirect: 'follow'
+			};
+
+			fetch("https://findmyplug.herokuapp.com/register/", requestOptions)
+				.then(response => response)
+				.then(result => console.log(result))
+				.catch(error => console.log('fgsla', error));
+		}
 	};
+
+
 
 	let navigate = useNavigate();
 
 	return (
-		<Grid
-			container
-			component="main"
-			sx={{ height: "100vh",
-			 overflow: "hidden"
-			 }}
-		>
+		<Grid container component="main" sx={{ height: "100vh", overflow: "hidden" }}>
 			<Grid
 				item
 				xs={12}
@@ -35,14 +64,13 @@ export default function SignInSide() {
 				square
 				backgroundColor="#ececed"
 			>
-				<img src={logo} alt="logo" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
+				<img src={logo} alt="cover-img" style={{ marginTop: '25px', display: "flex", justifyContent: 'flex-start', marginLeft: '25px' }} />
 				<Box
 					sx={{
-						my: 3,
-						mx: 4,
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
+						justifyContent: 'center'
 					}}
 				>
 					<Typography
@@ -59,77 +87,79 @@ export default function SignInSide() {
 					<Box
 						component="form"
 						noValidate
-						onSubmit={handleSubmit}
-						sx={{ mt: 1 }}
+						sx={{
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "center",
+							justifyContent: 'center'
+						}}
 					>
-						<TextField
-							margin="normal"
-							required
-							id="username"
-							label="Username"
-							name="username"
-							autoComplete="email"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
+						<Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+							<Grid item md={6} sm={12} xs={12} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+								<TextField
+									margin="normal"
+									required
+									value={person.email}
+									onChange={handleChange}
+									name="email"
+									label="Email"
+									type="email"
+									id="email"
+									sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
+								/>
+							</Grid>
+							<Grid item md={6} sm={12} xs={12} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+								<TextField
+									margin="normal"
+									required
+									name="phone"
+									label="Phone Number"
+									value={person.phone}
+									onChange={handleChange}
+									type="phone"
+									id="phone"
+									sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
+								/>
+							</Grid>
+						</Grid>
 
-						<TextField
-							margin="normal"
-							required
-							name="email"
-							label="Email"
-							type="email"
-							id="email"
-							autoComplete="email"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
-						<TextField
-							margin="normal"
-							required
-							name="password"
-							label="Password"
-							type="password"
-							id="password"
-							autoComplete="current-password"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
+						<Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+							<Grid item md={6} sm={12} xs={12} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+								<TextField
+									margin="normal"
+									required
+									name="pincode"
+									label="Pincode"
+									value={person.pincode}
+									onChange={handleChange}
+									type="pincode"
+									id="pincode"
+									sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
+								/>
+							</Grid>
+							<Grid item md={6} sm={12} xs={12} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+								<TextField
+									margin="normal"
+									required
+									name="password"
+									value={person.password}
+									onChange={handleChange}
+									label="Password"
+									type="password"
+									id="password"
+									autoComplete="current-password"
+									sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
+								/>
+							</Grid>
+						</Grid>
+						<p style={{ textAlign: 'center', fontSize: '0.89rem', color: '#1F2128' }}>Already have an account? <span onClick={() => navigate('/login')} style={{ cursor: 'pointer', color: 'blue' }}>Login</span></p>
 
-						<TextField
-							margin="normal"
-							required
-							name="confirm_password"
-							label="Confirm Password"
-							type="password"
-							id="confirm_password"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
-						<TextField
-							margin="normal"
-							required
-							name="phoneNumber"
-							label="Phone Number"
-							type="number"
-							id="phone_number"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
-						<TextField
-							margin="normal"
-							required
-							name="pincode"
-							label="Pincode"
-							type="pincode"
-							id="pincode"
-							sx={{ mt: 3, mb: 2, mr: 5, width: "300px" }}
-						/>
-						<Box
-							sx={{
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-							}}
-						>
+						<Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '-35px' }}>
 							<Button
+								className="main_btn"
 								type="submit"
 								variant="outlined"
+								onClick={handleSubmit}
 								sx={{
 									width: "300px",
 									height: "50px",
@@ -138,18 +168,18 @@ export default function SignInSide() {
 									justifyContent: "center",
 									alignItems: "center",
 									flexDirection: "column",
-									fontWeight:"bold",
-									"&:hover": { color: "#69FFF1", backgroundColor:"black"}
-									
+									fontWeight: "bold",
+									"&:hover": { color: "#69FFF1", backgroundColor: "black" }
+
 								}}
-								// sx={{ "&:hover": { color: "#69FFF1", backgroundColor:"black"} }}
+							// sx={{ "&:hover": { color: "#69FFF1", backgroundColor:"black"} }}
 							>
 								Sign Up
 							</Button>
-						</Box>
-					</Box>
-				</Box>
-			</Grid>
+						</Grid>
+					</Box >
+				</Box >
+			</Grid >
 
 			<Grid
 				item
@@ -178,28 +208,21 @@ export default function SignInSide() {
 						mt: -145,
 						mb: 2,
 						mr: 58,
-						// ml: -2,
-						// borderRadius: "50%",
-						// border: "red",
 						padding: "10px",
-						width: "100px",
-						backgroundColor: "black",
-						borderTopRightRadius: "50%",
-						borderBottomRightRadius: "50%",
-						borderTopLeftRadius: "2%",
-						borderBottomLeftRadius: "2%",
+						width: "110px",
+						backgroundColor: "#1F2128",
 						paddingRight: "25px",
 						paddingTop: "10px",
 						paddingBottom: "10px",
-						// backgroundColor:"red",
-						color: "white",
+						color: "#ECECED",
 						fontWeight: "bold",
-						"&:hover": { color:"black", backgroundColor:"white"}
+						borderRadius: '0px 25px 25px 0px !important'
 					}}
 				>
 					Login
 				</Button>
 				<Button
+					className="login_button"
 					type="button"
 					variant="contained"
 					onClick={() => {
@@ -209,23 +232,15 @@ export default function SignInSide() {
 						mt: -135,
 						mb: 2,
 						mr: 58,
-						// ml: -2,
-						// borderRadius: "50%",
-						// border: "red",
 						padding: "10px",
-						width: "100px",
-						backgroundColor: "black",
-						borderTopRightRadius: "50%",
-						borderBottomRightRadius: "50%",
-						borderTopLeftRadius: "2%",
-						borderBottomLeftRadius: "2%",
+						width: "110px",
+						backgroundColor: "#ECECED",
 						paddingRight: "25px",
 						paddingTop: "10px",
 						paddingBottom: "10px",
-						// backgroundColor:"red",
-						color: "white",
+						color: "#1F2128",
 						fontWeight: "bold",
-						"&:hover": { color:"black", backgroundColor:"white"}
+						borderRadius: '0px 25px 25px 0px !important'
 					}}
 				>
 					Sign Up
@@ -240,12 +255,12 @@ export default function SignInSide() {
 						mt: -55,
 						mr: 12,
 						ml: 15,
-						opacity: 1,
+						opacity: 1
 					}}
 				>
 					Hey there!
 				</Typography>
 			</Grid>
-		</Grid>
+		</Grid >
 	);
 }

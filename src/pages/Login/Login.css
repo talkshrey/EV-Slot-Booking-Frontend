@@ -49,6 +49,10 @@
 	height: 700px;
 } */
 
+/* body{
+    font-family: Montserrat;
+} */
+
 .loginImg {
 	background-size: cover;
 	background-position: center;
@@ -59,20 +63,18 @@
 	background-color: #ececed !important;
 }
 
-
-.login_button {
-   /* font-family: Georgia, 'Times New Roman', Times, serif  !important; */
-   font-weight: bold !important;
-   margin-top: 5px ;
+.login_button:hover {
+	background-color: #ECECED !important;
+    border: 3px solid #69FFF1 !important;
+    color: #1F2128 !important;
 }
-/* 
-Button: {
-    '&:hover': {
-      backgroundColor: '#ffffff',
-      boxShadow: 'none',
-    },
-    '&:active': {
-      boxShadow: 'none',
-      backgroundColor: '#3c52b2',
-    },
-  }, */
+
+.main_btn{
+    border: 3px solid #1F2128 !important;
+    color: #1F2128 !important;
+}
+
+.main_btn:hover{
+    background-color: #1F2128 !important;
+    color: #69FFF1 !important;
+}
