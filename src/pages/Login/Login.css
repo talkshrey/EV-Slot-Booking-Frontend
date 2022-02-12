@@ -63,18 +63,13 @@
 	background-color: #ececed !important;
 }
 
-.login_button:hover {
-	background-color: #ECECED !important;
-    border: 3px solid #69FFF1 !important;
-    color: #1F2128 !important;
-}
-
 .main_btn{
     border: 3px solid #1F2128 !important;
     color: #1F2128 !important;
 }
 
 .main_btn:hover{
+    border: 3px solid #69FFF1 !important;
     background-color: #1F2128 !important;
     color: #69FFF1 !important;
 }

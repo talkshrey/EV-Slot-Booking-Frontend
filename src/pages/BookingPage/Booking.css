@@ -12,6 +12,11 @@
     margin-bottom: -1% !important;
 }
 
+.nav_bar {
+    text-align: center;
+    padding: 2% 5% 2% 5%;
+}
+
 .right_arrow{
     width: 90px !important;
     height: 40px !important; 

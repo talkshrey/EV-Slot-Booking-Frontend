@@ -3,8 +3,6 @@ import login from "../../assets/images/cover.png";
 import "./Login.css";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -40,13 +38,28 @@ export default function LoginSide() {
 		})
 			.then((response) => response.json())
 			.then((result) => {
-				console.log(result)
+				if(result.token ){
+					console.log(result.token)
+					navigate('/booking')
+				}else{
+					navigate('/signup')
+					alert('Invalid cred')
+				}
+				// result.token ? navigate("/booking"):
+				// alert("invalid"), navigate("/signup")
 				localStorage.setItem('token', result.token)
+				
+			})
+			.catch((error) => {
+				console.log(error)
+				alert('Invalid Credentials')
 			});
 		// eslint-disable-next-line no-console
 	};
 
 	const navigate = useNavigate();
+
+	
 
 	return (
 		<Grid
@@ -127,14 +140,18 @@ export default function LoginSide() {
 								type="submit"
 								fullWidth
 								variant="outlined"
-								sx={{
-									height: "50px",
-									mt: 4,
-									display: "flex",
-									justifyContent: "center",
-									alignItems: "center",
-									flexDirection: "column"
-								}}
+								// onClick={() => {
+								// 	navigate("/booking");
+								// }}
+
+								// sx={{
+								// 	height: "50px",
+								// 	mt: 4,
+								// 	display: "flex",
+								// 	justifyContent: "center",
+								// 	alignItems: "center",
+								// 	flexDirection: "column"
+								// }}
 							>
 								Sign In
 							</Button>
