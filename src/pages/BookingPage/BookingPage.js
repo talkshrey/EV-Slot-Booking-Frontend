@@ -36,43 +36,44 @@ export default function Booking() {
 
 	return (
 		<Box>
-			<div className="nav-bar">
-				<div className="logo">
-					{" "}
-					<img src={logo} alt="logo" />{" "}
+			<div className="nav_bar">
+				<div className="bookingpage_logo">
+					<img src={logo} alt="logo" />
 				</div>
-				<div className="headers">
+				{/* <div className="headers">
 					<Link to="/booking" className="title">
-						{" "}
-						<div> Book </div>{" "}
+						<div> Book </div>
 					</Link>
 					<Link to="/review" className="title">
-						{" "}
-						<div> Reviews </div>{" "}
+						<div> Reviews </div>
 					</Link>
 					<Link to="/payment" className="title">
-						{" "}
-						<div> Payment </div>{" "}
+						<div> Payment </div>
 					</Link>
-				</div>
+				</div> */}
 			</div>
 
-			<Grid container spacing={2}>
+			<center><Grid container spacing={2} style={{ width:"90%" }}>
 				{data.map((item, index) => (
-					<Grid item xs={3} key={index}>
-						{" "}
-						<Paper>
-							{" "}
-							<CardInfo
-								name={item.station_name}
-								address={item.location}
-								number={item.phone_no}
-								value={item.star_rating}
-							/>{" "}
-						</Paper>{" "}
+					<Grid
+						item
+						xs={12}
+						md={4}
+						sm={6}
+						lg={3}						
+						key={index}
+						
+					>
+						<CardInfo
+							name={item.station_name}
+							address={item.location}
+							number={item.phone_no}
+							value={item.star_rating}
+						/>
 					</Grid>
 				))}
 			</Grid>
+			</center>
 		</Box>
 	);
 }

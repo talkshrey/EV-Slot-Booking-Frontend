@@ -43,8 +43,21 @@ export default function LoginSide() {
 		})
 			.then((response) => response.json())
 			.then((result) => {
-				console.log(result)
+				if(result.token ){
+					console.log(result.token)
+					navigate('/booking')
+				}else{
+					navigate('/signup')
+					alert('Invalid cred')
+				}
+				// result.token ? navigate("/booking"):
+				// alert("invalid"), navigate("/signup")
 				localStorage.setItem('token', result.token)
+				
+			})
+			.catch((error) => {
+				console.log(error)
+				alert('Invalid Credentials')
 			});
 		// eslint-disable-next-line no-console
 	};
@@ -132,6 +145,9 @@ export default function LoginSide() {
 								type="submit"
 								fullWidth
 								variant="outlined"
+								// onClick={() => {
+								// 	navigate("/booking");
+								// }}
 
 								// sx={{
 								// 	height: "50px",
