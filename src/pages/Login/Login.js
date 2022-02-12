@@ -3,8 +3,6 @@ import login from "../../assets/images/cover.png";
 import "./Login.css";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -12,9 +10,6 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/LPlogo.png";
 import cover from "../../assets/images/cover.png";
-import { Formik } from "formik";
-import * as EmailValidator from "email-validator"; // used when validating with a self-implemented approach
-import * as Yup from "yup"; // used when validating with a pre-built solution
 
 export default function LoginSide() {
 	const [email, setEmail] = useState("");
