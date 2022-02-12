@@ -36,7 +36,7 @@ export default function Booking() {
 				<Grid item xs={12} sm={12} md={2} lg={2} className="bookingpage_logo">
 					<img src={logo} alt="logo" />
 				</Grid>
-				<Grid item xs={0} sm={0} md={10} lg={10}/>
+				<Grid item xs="auto" sm="auto" md={10} lg={10}/>
 			</Grid>
 
 			<center><Grid container spacing={2} style={{ width:"90%" }}>
