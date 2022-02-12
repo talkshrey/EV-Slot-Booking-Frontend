@@ -1,11 +1,7 @@
 import "./Booking.css";
-import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import CardInfo from "./CardInfo";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/images/LPlogo.png";
 import { useEffect, useState } from "react";
 
@@ -36,22 +32,12 @@ export default function Booking() {
 
 	return (
 		<Box>
-			<div className="nav_bar">
-				<div className="bookingpage_logo">
+			<Grid container spacing={0} className="nav_bar">
+				<Grid item xs={12} sm={12} md={2} lg={2} className="bookingpage_logo">
 					<img src={logo} alt="logo" />
-				</div>
-				{/* <div className="headers">
-					<Link to="/booking" className="title">
-						<div> Book </div>
-					</Link>
-					<Link to="/review" className="title">
-						<div> Reviews </div>
-					</Link>
-					<Link to="/payment" className="title">
-						<div> Payment </div>
-					</Link>
-				</div> */}
-			</div>
+				</Grid>
+				<Grid item xs={0} sm={0} md={10} lg={10}/>
+			</Grid>
 
 			<center><Grid container spacing={2} style={{ width:"90%" }}>
 				{data.map((item, index) => (
