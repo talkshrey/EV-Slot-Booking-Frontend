@@ -7,47 +7,50 @@ import { BrowserRouter as Router, Outlet, Navigate } from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
 import Details from "./pages/CarDetails/Details";
 import Booking from "./pages/BookingPage/BookingPage"
+import Book from "./pages/Book/Book";
 
 
 function App() {
 
 	const PrivateRoute = () => {
 		const token = localStorage.getItem('token')
-		return token? <Outlet/> : <Navigate to="/login"/> 
+		return token ? <Outlet /> : <Navigate to="/login" />
 	}
 
 	const theme = createTheme({
 		palette: {
-		  secondary: {
-			main: '#E33E7F'
-		  }
+			secondary: {
+				main: '#E33E7F'
+			}
 		}
-	  });
+	});
 
 	return (
 
-		<MuiThemeProvider theme={theme}>      
-		<Router>
-			<div className="App">
-				<Routes>
-					<Route exact path='/login' element={<LoginSide />} />
-					<Route path='/signup' element={<SignInSide />} />
-					<Route path="/booking" element={<Booking/>} />
+		<MuiThemeProvider theme={theme}>
+			<Router>
+				<div className="App">
+					<Routes>
+						<Route exact path='/login' element={<LoginSide />} />
+						<Route path='/signup' element={<SignInSide />} />
+						<Route path="/booking" element={<Booking />} />
+						<Route path="/book" element={<Book />} />
 
-					<Route path='/' element={<PrivateRoute />} >
-						<Route path='/' element={<Landing/>}/>
-					</Route>
 
-					<Route path='/review' element={<PrivateRoute />} >
-						<Route path='/review' element={<Review/>}/>
-					</Route>
+						<Route path='/' element={<PrivateRoute />} >
+							<Route path='/' element={<Landing />} />
+						</Route>
 
-					<Route path='/details' element={<PrivateRoute />} >
-						<Route path='/details' element={<Details/>}/>
-					</Route>
-				</Routes>
-			</div>
-		</Router>
+						<Route path='/review' element={<PrivateRoute />} >
+							<Route path='/review' element={<Review />} />
+						</Route>
+
+						<Route path='/details' element={<PrivateRoute />} >
+							<Route path='/details' element={<Details />} />
+						</Route>
+					</Routes>
+				</div>
+			</Router>
 		</MuiThemeProvider>
 	);
 }
