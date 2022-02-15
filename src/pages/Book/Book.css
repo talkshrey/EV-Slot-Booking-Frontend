@@ -1,0 +1,133 @@
+.BookContainerGrid{
+    background-color: #1F2128;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+}
+body{
+    background-color: #ECECED;
+}
+.BookContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    padding: 50px;
+}
+
+.circle{
+    background-color: #1F2128;
+    color: #69FFF1;
+    padding: 25px;
+    border-radius: 50%;
+    border: 5px solid #768991;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px ;
+}
+
+.EVIcon{
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.BookingDetailsGrid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.BookingInfo{
+    color: #ECECED;
+    margin: 0;
+    font-size: small;
+}
+
+.BookingInfoOuterGrid{
+    width: 100%;
+}
+
+.BookingDetailsGridItem{
+    padding: 50px;
+}
+
+.priceDiv{
+    background-color: #768991;
+    color: #ECECED;
+    border: 2px dashed #69FFF1;
+    border-radius: 30px 0px 0px 30px;
+    padding: 10px 40px;
+}
+
+.priceDiv h2{
+    margin: 0;
+}
+
+.BookingFormOuterDiv{
+    width: 100%;
+    padding: 0px 50px ;
+    color: #ECECED;
+}
+
+/* .BookingFormOuterDiv h2{
+    padding: 0px 50px ;
+} */
+
+.BookingFormInnerDiv{
+    background-color: #ECECED;
+    border-radius: 5px;
+}
+
+.textField{
+    width: 100% !important;
+}
+
+.textFieldContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    row-gap: 0px;
+    column-gap: 90px;
+    padding: 20px 40px;
+}
+
+.BookingFormPaymentMethod{
+    padding: 0px 50px;
+    width: 100%;
+}
+
+.BookingFormPaymentMethod h2{
+    color: #ECECED;
+}
+
+.paymentOptions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    background: rgba(118, 137, 145, 0.1);
+    box-shadow: inset 12.5px -12.5px 12.5px rgba(90, 104, 110, 0.1), inset -12.5px 12.5px 12.5px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    border-radius: 5px;
+    color: #ECECED;
+    cursor: pointer;
+}
+
+.BookingFormConfirmReview{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 0px 50px;
+    column-gap: 20px;
+}
+
+.BookingFormConfirmReview h3{
+    color: #69FFF1;
+    cursor: pointer;
+}
