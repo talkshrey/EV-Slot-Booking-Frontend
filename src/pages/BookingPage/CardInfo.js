@@ -26,7 +26,7 @@ export default function CardInfo(props) {
 				// border radius = "50px"
 			/>
 			<CardContent className="card_content">
-				<Typography variant="body2" color="text.secondary" className="st_name">
+				<Typography variant="body2" color="text.secondary" className="st_name" sx={{paddingTop:"4px"}}>
 					Station Name : {/*{truncate(props.name, 3)}*/} {props.name}
 				</Typography>
 				<Typography
@@ -35,70 +35,78 @@ export default function CardInfo(props) {
 					className="address"
 					sx={{ fontFamily: "sans-serif" }}
 				>
-					Address : {truncate(props.address, 9)}
+					Address : {props.address}
+					 {/* {truncate(props.address, 9)} */}
 				</Typography>
-				<Typography
+				{/* <Typography
 					variant="body2"
 					color="text.secondary"
 					className="ph_number"
 				>
 					Phone Number : {props.number}
+				</Typography> */}
+				<Typography
+					variant="body2"
+					color="text.secondary"
+					className="ph_number"
+				>
+					Working Hours : {props.workinghours}
 				</Typography>
-				<div className="star_rating">
-					<div>
-						<Rating
-							name="simple-controlled"
-							value={props.value}
-							style={{ color: "#69FFF1", textAlign: "center" }}
-						/>
-					</div>
-				</div>
-				<CardActions className="buttons">
-					<Button
-						className="rate_button"
-						onClick={() => {
-							navigate("/review");
-						}}
-						component="span"
-						sx={{
-							border: 1,
-							borderColor: "#69FFF1",
-							color: "#69FFF1",
-							display: "flex",
-							flexGrow: 1,
-							"&:hover": {
-								backgroundColor: "#69FFF1",
-								color: "black",
-								fontWeight: "bolder",
-								border: 2,
-							},
-						}}
-					>
-						Rate
-					</Button>
-					<Button
-						className="book_button"
-						onClick={() => {
-							navigate("/book");
-						}}
-						sx={{
-							border: 1,
-							borderColor: "#69FFF1",
-							color: "#69FFF1",
-							display: "flex",
-							flexGrow: 1,
-							"&:hover": {
-								backgroundColor: "#69FFF1",
-								color: "black",
-								fontWeight: "bolder",
-								border: 2,
-							},
-						}}
-					>
-						Book
-					</Button>
-				</CardActions>
 			</CardContent>
+			<div className="star_rating">
+				<div>
+					<Rating
+						name="simple-controlled"
+						value={props.value}
+						style={{ color: "#69FFF1", textAlign: "center", paddingTop: "5px" }}
+					/>
+				</div>
+			</div>
+			<CardActions className="buttons">
+				<Button
+					className="rate_button"
+					onClick={() => {
+						navigate("/review");
+					}}
+					component="span"
+					sx={{
+						border: 1,
+						borderColor: "#69FFF1",
+						color: "#69FFF1",
+						display: "flex",
+						flexGrow: 1,
+						"&:hover": {
+							backgroundColor: "#69FFF1",
+							color: "black",
+							fontWeight: "bolder",
+							border: 2,
+						},
+					}}
+				>
+					Rate
+				</Button>
+				<Button
+					className="book_button"
+					onClick={() => {
+						navigate("/book");
+					}}
+					sx={{
+						border: 1,
+						borderColor: "#69FFF1",
+						color: "#69FFF1",
+						display: "flex",
+						flexGrow: 1,
+						"&:hover": {
+							backgroundColor: "#69FFF1",
+							color: "black",
+							fontWeight: "bolder",
+							border: 2,
+						},
+					}}
+				>
+					Book
+				</Button>
+			</CardActions>
 		</Card>
 	);
 }

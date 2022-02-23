@@ -1,54 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
 .st_name {
 	font-size: 12px !important;
-    color: white !important;
-    font-family: 'Source Sans Pro', sans-serif !important;
-    text-align: center;
+	color: white !important;
+	font-family: "Source Sans Pro", sans-serif !important;
+	text-align: center;
+    
 }
 
 .address {
 	font-size: 12px !important;
-    color: white !important;
-    text-overflow: ellipsis !important;
-    text-align: center;
+	color: white !important;
+	text-overflow: ellipsis !important;
+	text-align: center;
 }
 
 .ph_number {
 	font-size: 12px !important;
-    color: white !important;
-    text-align: center;
+	color: white !important;
+	text-align: center;
 }
 
 .buttons {
-	 padding: 0 !important;
-    /* font-size: 15px !important;  */
-   /* margin-bottom: 10px !important; */
+	padding: 10px !important;
+	background-color: #1f2128;
+	color: white;
+	text-align: center !important;
 }
 
-.card_media{
-    height: 100px !important;
-    /* width: 10px !important; */
+.card_media {
+	height: 100px !important;
+}
+
+.star_rating {
+	padding-top: 6px !important;
+	background-color: #1f2128;
+	color: white;
+	text-align: center !important;
 }
 
 .card_content {
-	padding: 10px !important;
-    background-color: #1F2128;
-    color: white;    
-    text-align: center !important;
-    height: 170px !important;
+	padding: 0px !important;
+	background-color: #1f2128;
+	color: white;
+	text-align: center !important;
+	height: 80px !important;
 }
 
-.rate_button{
-    border-radius: 0% !important;
-    /* margin-bottom:  10% !important; */
-    /* bottom: 5px !important;  */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.rate_button {
+	border-radius: 0% !important;
 }
 
-.book_button{
-    margin-left: 10% !important;
-    border-radius: 0% !important;  
+.book_button {
+	margin-left: 10% !important;
+	border-radius: 0% !important;
 }
+

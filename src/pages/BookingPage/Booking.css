@@ -11,12 +11,25 @@
     margin-left: 65% !important;
     margin-bottom: -1% !important;
 }
-/* 
-.bookingpage_logo{
+
+.booking_nav-bar{
+    width: 70% !important ;
+    display: flex;
+    flex: 1 !important;
+    /* flex-direction: row; */
+    /* justify-content: space-around; */
+    margin-left: 2em;
+    /* padding: 5vh; */
+    /* font-size: 20px; */
+}
+
+.booking_headers{
+    width: 75% !important;
     display: flex;
     flex-direction: row;
-    margin-right: 70% !important;
-} */
+    justify-content: space-around;
+    text-decoration: none;
+}
 
 .right_arrow{
     width: 90px !important;
