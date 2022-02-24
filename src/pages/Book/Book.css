@@ -83,18 +83,49 @@ body{
 }
 
 .textField{
-    width: 100% !important;
+    width: 50% !important;
+}
+
+.text-Field{
+    width: 12% !important;
+}
+
+.duration{
+    color: black;
+    margin-right: 1em;
+}
+
+.duration_button{
+    /* width: 50px; */
+    height: 50px;
+    justify-content: flex;
+    align-items: center;
+    /* margin-right: 8em; */
 }
 
 .textFieldContainer{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     row-gap: 0px;
     column-gap: 90px;
     padding: 20px 40px;
+    /* background-color: #768991; */
 }
+
+.main_bt{
+    border: 3px solid #1F2128 !important;
+    border: 3px solid #69FFF1 !important;
+    /* color: #1F2128 !important; */
+}
+
+.main_bt:hover{
+    border: 3px solid #69FFF1 !important;
+    background-color: #1F2128 !important;
+    color: #69FFF1 !important;
+}
+
 
 .BookingFormPaymentMethod{
     padding: 0px 50px;
