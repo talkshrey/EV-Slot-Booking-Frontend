@@ -7,12 +7,17 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Rating } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 function truncate(str, no_words) {
 	return str.split(" ").splice(0, no_words).join(" ");
 }
 
 export default function CardInfo(props) {
+	const name = props.name
+	const address = props.address
+	const number = props.number
 	const navigate = useNavigate();
 	return (
 		<Card className="card_grid">
@@ -23,7 +28,7 @@ export default function CardInfo(props) {
 				image="https://wallpapercave.com/wp/wp3399378.jpg"
 				alt="green iguana"
 				border="5px  #1F2128"
-				// border radius = "50px"
+			// border radius = "50px"
 			/>
 			<CardContent className="card_content">
 				<Typography variant="body2" color="text.secondary" className="st_name">
@@ -76,7 +81,7 @@ export default function CardInfo(props) {
 					>
 						Rate
 					</Button>
-					<Button
+					{/* <Button
 						className="book_button"
 						onClick={() => {
 							navigate("/book");
@@ -96,7 +101,8 @@ export default function CardInfo(props) {
 						}}
 					>
 						Book
-					</Button>
+					</Button> */}
+					<Link to={"/book"} state={{ name: name, address: address, number: number }} className="book_button" sx={{ border: 1, borderColor: "#69FFF1", color: "#69FFF1", display: "flex", flexGrow: 1, "&:hover": { backgroundColor: "#69FFF1", color: "black", fontWeight: "bolder", border: 2, }, textDecoration: 'none !important' }}>BOOK</Link>
 				</CardActions>
 			</CardContent>
 		</Card>
