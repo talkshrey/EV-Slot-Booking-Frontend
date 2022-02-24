@@ -1,18 +1,12 @@
-// import React, { useState } from "react";
 import "./Booking.css";
 import { Box } from "@mui/material";
 import Grid from "@material-ui/core/Grid";
 import CardInfo from "./CardInfo";
 import logo from "../../assets/images/LPlogo.png";
 import { useEffect, useState } from "react";
-// import Paper from "@mui/material/Paper";
-import InputBase from "@mui/material/InputBase";
-import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
 
 export default function Booking() {
 	const [data, setData] = useState([]);
-	const [input, setInput] = useState("");
 	useEffect(() => {
 		var myHeaders = new Headers();
 		myHeaders.append("Authorization", `Token ${localStorage.getItem("token")}`);
@@ -37,7 +31,6 @@ export default function Booking() {
 	}, []);
 
 	return (
-
 		<Box>
 			<Grid container spacing={0} className="nav_bar">
 				<Grid item xs={12} sm={12} md={2} lg={2} className="bookingpage_logo">
@@ -46,20 +39,26 @@ export default function Booking() {
 				<Grid item xs="auto" sm="auto" md={10} lg={10}/>
 			</Grid>
 
-			<center>
-				<Grid container spacing={2} style={{ width: "90%" }}>
-					{data.map((item, index) => (
-						<Grid item xs={12} md={4} sm={6} lg={3} key={index}>
-							<CardInfo
-								name={item.station_name}
-								address={item.location}
-								number={item.phone_no}
-								value={item.star_rating}
-								workinghours={item.working_hours}
-							/>
-						</Grid>
-					))}
-				</Grid>
+			<center><Grid container spacing={2} style={{ width:"90%" }}>
+				{data.map((item, index) => (
+					<Grid
+						item
+						xs={12}
+						md={4}
+						sm={6}
+						lg={3}						
+						key={index}
+						
+					>
+						<CardInfo
+							name={item.station_name}
+							address={item.location}
+							number={item.phone_no}
+							value={item.star_rating}
+						/>
+					</Grid>
+				))}
+			</Grid>
 			</center>
 		</Box>
 	);

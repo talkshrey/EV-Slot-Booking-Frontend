@@ -49,6 +49,9 @@
 
 .rate_button {
 	border-radius: 0% !important;
+	width: 25% !important;
+	font-weight: bolder !important;
+
 }
 
 .book_button {
@@ -64,11 +67,12 @@
     border: 1px solid #69FFF1 !important;
     padding: 8px 0px;
     color: #69FFF1;
-    /* font-weight: bold; */
+    font-weight: bolder;
 }
 
 .book_button:hover{
     background-color: #69FFF1;
     color: #1F2128;
 }
+
 
