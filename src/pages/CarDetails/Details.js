@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 import logo from "../../assets/images/LPlogo.png";
 import cover from "../../assets/images/cover.png";
@@ -11,13 +12,41 @@ import { useState } from "react";
 
 export default function Details() {
 
+    const plugs = [
+        {
+            value:'IEC-60309',
+            label:'IEC-60309'
+        },
+        {
+            value:'IEC-62196(AC type 2)',
+            label:'IEC-62196 type 2'
+        },
+        {
+            value:'CSS connector',
+            label:'CSS connector'
+        },
+        {
+            value:'GBT connector',
+            label:'GBT connector'
+        },
+        {
+            value:'CHAdeMO connector',
+            label:'CHAdeMO connector'
+        },
+        {
+            value:'3 Pin Connector(15 Amp)',
+            label:'3 Pin Connector'
+        },
+    ]
+
     const [model, setModel] = useState()
-    const [type, setType] = useState()
+    const [type, setType] = useState("CSS connector")
     const [reg, setReg] = useState()
     const [vin, setVin] = useState()
 
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", `Token ${localStorage.getItem('token')}`);
+    // myHeaders.append("Authorization", `Token ${localStorage.getItem('token')}`);
+    myHeaders.append("Authorization", `Token d59a98b150e24abc1d68d82fb31ce00ba631af97`);
     myHeaders.append("Cookie", "csrftoken=9G4FaPL7CN11nJAhTTLLNd48zCvchBmcrDKrsVkGgZN1NblNX29YJFRR8WkTYbD1");
       
     const handleSubmit = (event) => {
@@ -37,7 +66,7 @@ export default function Details() {
             redirect: 'follow'
         };
         
-        fetch("https://findmyplug.herokuapp.com/vehicles/", requestOptions)
+        fetch("http://localhost:8000/vehicles/", requestOptions)
         .then(response => response.json())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
@@ -73,7 +102,7 @@ export default function Details() {
                         alignItems="right"
                         sx={{ mt: 0, fontWeight: "bold" }}
                     >
-                        REGISTER  YOUR DRIVE
+                        REGISTER YOUR DRIVE
                     </Typography>
                     <Typography component="h6">to continue and book your slot</Typography>
                     <Box
@@ -98,13 +127,19 @@ export default function Details() {
                             required
                             name="plug_type"
                             label="Plug Type"
-                            type="text"
                             id="plug_type"
-                            autoComplete="plug type"
+                            defaultValue="CSS connector"
+                            select
                             sx={{ mt: 3, mb: 2, mr: 5, width: "40%" }}
                             onChange={(e)=>setType(e.target.value)}
 
-                        />
+                        >
+                            {plugs.map((option)=> (
+                                <MenuItem key={option.value} value={option.value}>
+                                    {option.label}
+                                </MenuItem>
+                            ))}
+                        </TextField>
                         <TextField
                             margin="normal"
                             required
@@ -179,13 +214,13 @@ export default function Details() {
                     fontSize="2rem"
                     color="white"
                     sx={{
-                        mt: -55,
+                        mt: -50,
                         mr: 12,
                         ml: 15,
                         opacity: 1,
                     }}
                 >
-                    Welcome, Back
+                    Welcome
                 </Typography>
             </Grid>
         </Grid>

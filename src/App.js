@@ -33,8 +33,6 @@ function App() {
 					<Routes>
 						<Route exact path='/login' element={<LoginSide />} />
 						<Route path='/signup' element={<SignInSide />} />
-						<Route path="/booking" element={<Booking />} />
-						<Route path="/book" element={<Book />} />
 
 
 						<Route path='/' element={<PrivateRoute />} >
@@ -47,6 +45,14 @@ function App() {
 
 						<Route path='/details' element={<PrivateRoute />} >
 							<Route path='/details' element={<Details />} />
+						</Route>
+
+						<Route path='/booking' element={<PrivateRoute />} >
+							<Route path='/booking' element={<Booking />} />
+						</Route>
+
+						<Route path='/booking/:id' element={<PrivateRoute />} >
+							<Route path="/booking/:id" element={<Book />} />
 						</Route>
 					</Routes>
 				</div>

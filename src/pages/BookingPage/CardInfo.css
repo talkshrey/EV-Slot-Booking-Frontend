@@ -15,7 +15,7 @@
 	text-align: center;
 }
 
-.ph_number {
+.workinghours {
 	font-size: 12px !important;
 	color: white !important;
 	text-align: center;
@@ -29,7 +29,7 @@
 }
 
 .card_media {
-	height: 100px !important;
+	height: 150px !important;
 }
 
 .star_rating {

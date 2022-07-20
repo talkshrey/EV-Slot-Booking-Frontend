@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
 .BookContainerGrid{
     background-color: #1F2128;
     display: flex;
@@ -44,7 +46,7 @@ body{
 .BookingInfo{
     color: #ECECED;
     margin: 0;
-    font-size: small;
+    font-size: 1rem;
 }
 
 .BookingInfoOuterGrid{
@@ -73,10 +75,6 @@ body{
     color: #ECECED;
 }
 
-/* .BookingFormOuterDiv h2{
-    padding: 0px 50px ;
-} */
-
 .BookingFormInnerDiv{
     background-color: #ECECED;
     border-radius: 5px;
@@ -86,44 +84,59 @@ body{
     width: 50% !important;
 }
 
-.text-Field{
-    width: 12% !important;
-}
-
 .duration{
     color: black;
     margin-right: 1em;
 }
 
 .duration_button{
-    /* width: 50px; */
-    height: 50px;
-    justify-content: flex;
-    align-items: center;
-    /* margin-right: 8em; */
+    text-decoration: none !important;
+    text-transform: none !important;
+    color: #1F2128 !important;
+    font-weight: bold !important;
+}
+
+#duration_button_left{   
+    border: 2px #1F2128 solid !important;
+}
+
+#duration_button_center{
+    border-top: 2px #1F2128 solid !important;
+    border-bottom: 2px #1F2128 solid !important;
+}
+
+#duration_button_right{
+    border: 2px #1F2128 solid !important;
+}
+
+.duration_button:hover{
+    background-color: #768991 !important;
+    color: #ECECED !important;
 }
 
 .textFieldContainer{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    row-gap: 0px;
-    column-gap: 90px;
-    padding: 20px 40px;
-    /* background-color: #768991; */
 }
 
 .main_bt{
-    border: 3px solid #1F2128 !important;
     border: 3px solid #69FFF1 !important;
-    /* color: #1F2128 !important; */
+    color: #69FFF1 !important;
+    background-color: #1F2128 !important;
+    text-transform: none !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    font-size: 1.2rem !important;
+    padding: 5px 50px !important;
+    font-family: 'Source Sans Pro', sans-serif !important;
+    border-radius: 5px !important;
 }
 
 .main_bt:hover{
-    border: 3px solid #69FFF1 !important;
-    background-color: #1F2128 !important;
-    color: #69FFF1 !important;
+    border: 3px solid #1F2128 !important;
+    background-color: #69FFF1 !important;
+    color: #1F2128 !important;
 }
 
 
@@ -162,3 +175,15 @@ body{
     color: #69FFF1;
     cursor: pointer;
 }
+
+.MuiSlider-rail { 
+    color: #69FFF1;
+}
+
+.MuiSlider-track { 
+    background-color: #69FFF1 !important;
+}
+
+.MuiSlider-thumb {
+    background-color: #1F2128 !important;
+} 

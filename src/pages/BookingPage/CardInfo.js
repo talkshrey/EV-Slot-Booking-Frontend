@@ -9,128 +9,97 @@ import { Rating } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-function truncate(str, no_words) {
-	return str.split(" ").splice(0, no_words).join(" ");
-}
-
 export default function CardInfo(props) {
-	const name = props.name;
-	const address = props.address;
-	const number = props.number;
-	const navigate = useNavigate();
-	return (
-		<Card className="card_grid">
-			<CardMedia
-				className="card_media"
-				component="img"
-				height="150"
-				image="https://wallpapercave.com/wp/wp3399378.jpg"
-				alt="green iguana"
-				border="5px  #1F2128"
-				// border radius = "50px"
-			/>
-			<CardContent className="card_content">
-				<Typography
-					variant="body2"
-					color="text.secondary"
-					className="st_name"
-					sx={{ paddingTop: "4px" }}
-				>
-					Station Name : {/*{truncate(props.name, 3)}*/} {props.name}
-				</Typography>
-				<Typography
-					variant="body2"
-					color="text.secondary"
-					className="address"
-					sx={{ fontFamily: "sans-serif" }}
-				>
-					Address : {props.address}
-					{/* {truncate(props.address, 9)} */}
-				</Typography>
+	
+  const navigate = useNavigate();
+  return (
+    <Card className="card_grid">
+      <CardMedia
+        className="card_media"
+        component="img"
+        image={props.img}
+        alt={props.name}
+        border="5px  #1F2128"
+        // border radius = "50px"
+      />
+      <CardContent className="card_content">
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          className="st_name"
+          sx={{ paddingTop: "4px" }}
+        >
+          Station Name : {props.name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary" className="address">
+          Address : {props.address}
+        </Typography>
 
-				<Typography
-					variant="body2"
-					color="text.secondary"
-					className="ph_number"
-				>
-					Working Hours : {props.workinghours}
-				</Typography>
-
-				{/* <Link
-						to={"/book"}
-						state={{ name: name, address: address, number: number }}
-						className="book_button"
-						sx={{
-							border: 1,
-							borderColor: "#69FFF1",
-							color: "#69FFF1",
-							display: "flex",
-							flexGrow: 1,
-							"&:hover": {
-								backgroundColor: "#69FFF1",
-								color: "black",
-								fontWeight: "bolder",
-								border: 2,
-							},
-							textDecoration: "none !important",
-						}}
-					>
-						BOOK
-					</Link> */}
-			</CardContent>
-			<div className="star_rating">
-				<div>
-					<Rating
-						name="simple-controlled"
-						value={props.value}
-						style={{ color: "#69FFF1", textAlign: "center", paddingTop: "5px" }}
-					/>
-				</div>
-			</div>
-			<CardActions className="buttons">
-				<Button
-					className="rate_button"
-					onClick={() => {
-						navigate("/review");
-					}}
-					component="span"
-					sx={{
-						border: 1,
-						borderColor: "#69FFF1",
-						color: "#69FFF1",
-						display: "flex",
-						flexGrow: 1,
-						"&:hover": {
-							backgroundColor: "#69FFF1",
-							color: "black",
-							// fontWeight: "bolder",
-							border: 2,
-						},
-					}}
-				>
-					Rate
-				</Button>
-				<Link
-					to={"/book"}
-					state={{ name: name, address: address, number: number }}
-					className="book_button"
-					sx={{
-						border: 1,
-						borderColor: "#69FFF1",
-						color: "#69FFF1",
-						display: "flex",
-						flexGrow: 1,
-						"&:hover": {
-							backgroundColor: "#69FFF1",
-							color: "black",
-							fontWeight: "bolder",
-							border: 2,
-						}
-					}}
-				>
-					BOOK
-				</Link>
-			</CardActions>
-		</Card>
-	);
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          className="workinghours"
+        >
+          Working Hours : {props.workinghours}
+        </Typography>
+      </CardContent>
+      <div className="star_rating">
+        <div>
+          <Rating
+            name="simple-controlled"
+            value={props.value}
+            style={{ color: "#69FFF1", textAlign: "center", paddingTop: "5px" }}
+          />
+        </div>
+      </div>
+      <CardActions className="buttons">
+        <Button
+          className="rate_button"
+          onClick={() => {
+            navigate("/review");
+          }}
+          component="span"
+          sx={{
+            border: 1,
+            borderColor: "#69FFF1",
+            color: "#69FFF1",
+            display: "flex",
+            flexGrow: 1,
+            "&:hover": {
+              backgroundColor: "#69FFF1",
+              color: "black",
+              fontWeight: "bolder",
+              border: 1,
+            },
+          }}
+        >
+          Rate
+        </Button>
+        <Link
+          to={`/booking/${props.id}`}
+          state={{
+            name: props.name,
+            address: props.address,
+            number: props.number,
+          }}
+          className="book_button"
+          sx={{
+            border: 1,
+            borderColor: "#69FFF1",
+            color: "#69FFF1",
+            display: "flex",
+            flexGrow: 1,
+            "&:hover": {
+              backgroundColor: "#69FFF1",
+              color: "black",
+              fontWeight: "bolder",
+              border: 1,
+            },
+          }}
+        >
+          BOOK
+        </Link>
+      </CardActions>
+    </Card>
+  );
 }
